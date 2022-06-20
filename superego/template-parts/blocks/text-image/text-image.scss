@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// Standard Text & Image block styling
+// -----------------------------------------------------------------------------
+
+@use "../../../assets/styles/scss/01_abstracts/mixins" as *;
+
+body section.text-image-block {
+  .gutenberg-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wp-block-buttons {
+    margin-top: 2rem;
+  }
+
+  .row {
+    gap: 2rem;
+
+    @include mq(lg) {
+      gap: 0;
+    }
+  }
+}

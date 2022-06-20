@@ -1,0 +1,475 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to admin pages
+// -----------------------------------------------------------------------------
+
+$green-d: darken(#0f322d, 6%);
+$green-d-hover: darken(#0f322d, 2%);
+$green-l: darken(#37d87b, 8%);
+$green-l-hover: darken($green-l, 6%);
+
+// Definde admin colorscheme props
+:root {
+	--wp-admin-theme-color: #3858e9;
+	--wp-admin-theme-color-darker-10: #004c7b;
+	--wp-admin-theme-color-darker-20: #0b3d61;
+	--wp-admin-border-width-focus: 2px;
+}
+
+// Reset admin highlight color
+body.wp-admin {
+	overflow-x: hidden;
+
+	// Admin Variables
+	--wp-admin-theme-color: var(--wp--preset--color--accent-b);
+	--wp-admin-theme-color-darker-10: var(--wp--preset--color--accent-d);
+	--wp-admin-theme-color-darker-20: var(--wp--preset--color--accent-l);
+
+	::selection {
+		background: var(--wp--preset--color--primary-b, blue) !important;
+		color: white !important;
+	}
+}
+
+.wp-block {
+	max-width: 1320px;
+}
+
+.editor-styles-wrapper .zoom-in {
+	opacity: 1 !important;
+}
+
+// Enable sidebar resizing
+.interface-complementary-area {
+	min-width: 420px;
+	max-width: 600px;
+	resize: horizontal;
+	overflow: auto;
+}
+
+// Remove default Yoast box
+#wpseo_meta {
+	display: none;
+}
+
+#tinymce {
+	margin: 16px !important;
+}
+
+.wp-admin .editor-styles-wrapper section.section {
+	padding: 4rem 1rem;
+}
+
+table.fixed {
+	table-layout: auto;
+}
+
+#the-list {
+	table-layout: fixed;
+	.column-img {
+		width: 60px;
+		overflow: hidden;
+		white-space: nowrap;
+		img {
+			max-width: 80px;
+			height: auto;
+		}
+	}
+}
+
+.wp-admin #billede-text {
+	img {
+		max-width: 680px !important;
+		min-width: 0 !important;
+	}
+}
+
+.wp-admin .editor-styles-wrapper #billede-text::before {
+	max-width: 600px !important;
+}
+
+$trans: 250ms ease-in-out;
+$height: 44px;
+$border-color: hsl(0, 0%, 85%);
+
+// body.wp-admin {
+// 	//background: hsl(0, 0%, 92%);
+// }
+
+#wpcontent {
+	padding-right: 20px;
+
+	.wrap {
+		margin: 2rem 1.5rem;
+
+		h1 {
+			font-size: 36px;
+			margin-bottom: 2rem;
+			margin-right: 1rem;
+		}
+
+		.page-title-action {
+			padding: 8px 16px;
+			transition: $trans;
+			top: -7px;
+		}
+	}
+
+	#titlediv #title {
+		height: 56px;
+		padding-left: 1rem;
+		border-color: hsl(0, 0%, 93%);
+		border-color: $border-color;
+
+		&:focus-within {
+			border-color: var(--wp-admin-theme-color);
+		}
+
+		&:hover {
+			border-color: var(--wp-admin-theme-color);
+		}
+	}
+}
+
+#wpbody-content,
+#customize-controls {
+	input[type="text"],
+	input[type="number"],
+	input[type="url"],
+	input[type="email"],
+	input[type="search"],
+	select {
+		height: $height;
+		padding-left: 1rem !important;
+		transition: $trans;
+		border-radius: 4px;
+		box-shadow: none !important;
+		border-color: $border-color;
+		outline: 0;
+
+		&:focus-within {
+			border-color: var(--wp-admin-theme-color);
+		}
+
+		&:hover {
+			border-color: var(--wp-admin-theme-color);
+		}
+	}
+
+	select {
+		border-color: $border-color;
+		//padding-right: 1rem;
+		box-sizing: border-box;
+
+		option {
+			padding: 1rem;
+		}
+	}
+
+	textarea {
+		padding: 1rem;
+		transition: $trans;
+		border-radius: 4px;
+		box-shadow: none !important;
+		outline: 0;
+		border-color: $border-color;
+
+		&:focus-within {
+			border-color: var(--wp-admin-theme-color);
+		}
+
+		&:hover {
+			border-color: var(--wp-admin-theme-color);
+		}
+	}
+
+	input[type="radio"] {
+		border-color: darken($border-color, 10%);
+		//background-color: white;
+		transition: $trans;
+		outline: 0;
+
+		&:before {
+			transition: $trans;
+		}
+
+		&:hover {
+			border-color: var(--wp-admin-theme-color);
+		}
+
+		&:checked {
+			&::before {
+				background-color: var(--wp-admin-theme-color);
+			}
+		}
+	}
+
+	input[type="checkbox"] {
+		border-color: darken($border-color, 10%);
+		//background-color: white;
+		transition: $trans;
+		outline: 0;
+
+		&:before {
+			transition: $trans;
+		}
+
+		&:hover {
+			border-color: var(--wp-admin-theme-color);
+		}
+
+		// &:checked {
+		// 	&::before {
+		// 		//background-color: var(--wp-admin-theme-color);
+		// 	}
+		// }
+	}
+
+	.postbox {
+		border-radius: 4px;
+		border-color: $border-color;
+		box-shadow: none !important;
+		// border: 0;
+
+		.postbox-header {
+			border-color: $border-color;
+
+			h2 {
+				padding: 1rem;
+			}
+		}
+
+		// .inside {
+		// }
+	}
+}
+
+#wpbody-content {
+	.button,
+	.button-primary,
+	.button-secondary,
+	input:not(#save) {
+		//height: $height;
+		padding: 0.4rem 1.5rem;
+		transition: $trans;
+		//display: inline-flex;
+		align-items: center;
+		//width: auto;
+
+		&.media-frame-menu-toggle {
+			display: none;
+		}
+	}
+}
+
+body .components-datetime {
+	input {
+		padding: 0 8px !important;
+		width: auto;
+	}
+}
+
+.tablenav.top {
+	height: auto;
+	margin-bottom: 1rem;
+}
+
+// Main WP table
+table.wp-list-table {
+	border-radius: 4px;
+	border: 1px solid $border-color;
+	box-shadow: none !important;
+	margin: 2rem 0;
+
+	thead,
+	tfoot {
+		th,
+		td {
+			border-color: $border-color;
+
+			a {
+				transition: $trans;
+			}
+		}
+
+		.manage-column {
+			padding: 1rem 0.5rem;
+			border-color: $border-color;
+		}
+	}
+
+	// Main WP Table content
+	tbody#the-list,
+	tbody#the-comment-list {
+		tr {
+			td,
+			th {
+				vertical-align: middle;
+				padding: 1rem 10px;
+
+				.row-title {
+					font-size: 16px !important;
+					color: #1d2327;
+					transition: $trans;
+
+					&:hover {
+						color: var(--wp-admin-theme-color);
+					}
+				}
+
+				img {
+					display: block;
+					border-radius: 4px;
+				}
+			}
+
+			.plugin-title {
+				strong {
+					font-size: 16px !important;
+				}
+			}
+
+			&.no-items {
+				td.colspanchange {
+					padding: 2rem;
+				}
+			}
+		}
+	}
+}
+
+// Media library
+.media-frame .media-toolbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	border-color: $border-color;
+	border-radius: 4px;
+	box-shadow: none !important;
+}
+
+.media-frame.mode-grid .attachments-browser .attachments {
+	padding: 0;
+
+	li {
+		border-radius: 4px;
+	}
+}
+
+// Themes
+.theme-browser .theme .theme-actions,
+.theme-browser .theme.active .theme-actions {
+	box-shadow: none !important;
+	background: transparent;
+}
+
+#welcome-panel {
+	box-shadow: none !important;
+	border-radius: 4px;
+	border-color: $border-color;
+	padding: 2.5rem;
+
+	h2 {
+		font-size: 24px;
+		margin-bottom: 0.5rem;
+	}
+
+	.button.button-hero {
+		line-height: 28px;
+	}
+	.welcome-panel-content {
+		margin-left: 0;
+	}
+}
+
+::selection {
+	color: white;
+	background-color: var(--wp-admin-theme-color);
+}
+
+// YOAST PREMIUM
+.yoast_premium_upsell,
+.yoast-sidebar,
+#yoast-helpscout-beacon {
+	display: none !important;
+}
+
+// Navigations
+// .nav-tab-wrapper {
+// }
+
+.manage-menus {
+	padding: 1rem;
+	border-color: $border-color;
+	border-radius: 4px;
+	box-shadow: none !important;
+}
+
+#menu-settings-column {
+	#side-sortables {
+		border-color: $border-color;
+		border-radius: 4px;
+		box-shadow: none !important;
+	}
+}
+
+#menu-management-liquid {
+	.menu-edit {
+		border-color: $border-color;
+		border-radius: 4px;
+		box-shadow: none !important;
+
+		.menu {
+			li {
+				border-color: $border-color;
+				border-radius: 4px;
+				box-shadow: none !important;
+			}
+		}
+	}
+}
+
+// Change admin bar logo to Superego
+#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+	content: url("/wp-content/themes/superego/assets/images/theme-default/supericon.svg");
+}
+
+// Theme Customizer
+body #customize-controls #customize-theme-controls {
+	ul.customize-pane-parent,
+	ul.customize-pane-child {
+		li {
+			border-color: $border-color;
+
+			.accordion-section-title {
+				padding: 1rem;
+
+				&:after {
+					outline: 0 !important;
+					border: 0 !important;
+				}
+			}
+		}
+	}
+
+	.customize-panel-back {
+		height: 82px;
+	}
+}
+
+.wp-block.editor-post-title {
+	margin-bottom: 2rem;
+}
+
+.edit-post-visual-editor a {
+	pointer-events: none;
+}
+
+body#tinymce {
+	margin-top: auto !important;
+	padding: 1rem !important;
+
+	::selection {
+		background-color: black !important;
+	}
+}

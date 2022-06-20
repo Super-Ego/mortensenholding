@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to Native WordPress Gutenberg Blocks.
+// -----------------------------------------------------------------------------
+
+@use "../01_abstracts/mixins" as *;
+
+// Remove padding from groups with background-color
+:where(.wp-block-group.has-background) {
+    padding: 0;
+}
+
+// Set WP Columns to same gap as Bootstrap
+body .wp-block-columns {
+    gap: 1.5rem;
+
+    @include mq(md) {
+        gap: 2rem;
+    }
+}

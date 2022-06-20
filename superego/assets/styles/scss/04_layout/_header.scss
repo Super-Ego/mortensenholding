@@ -1,0 +1,107 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site.
+// -----------------------------------------------------------------------------
+
+@use "../01_abstracts/index" as *;
+
+// Main Header
+body header#main-header {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: var(--wp--preset--color--light-b);
+  width: 100%;
+  transition: var(--se--transition);
+  z-index: 999;
+
+  a#site-logo {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      svg {
+        path {
+          fill: var(--wp--preset--color--accent-b);
+        }
+      }
+    }
+  }
+
+  nav#main-navigation {
+    display: flex;
+
+    ul#main-nav {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+
+      > li.menu-item {
+        position: relative;
+        list-style-type: none;
+        display: flex;
+        height: var(--se--header-height);
+        transition: var(--se--transition);
+
+        a {
+          width: 100%;
+          padding: 0 2rem;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          background-color: transparent;
+          color: var(--wp--preset--color--dark-b);
+          transition: var(--se--transition);
+          user-select: none;
+          white-space: nowrap;
+
+          &:hover {
+            background-color: var(--wp--preset--color--light-1);
+          }
+        }
+
+        &.current-menu-item,
+        &.current-menu-ancestor {
+          > a {
+            color: var(--wp--preset--color--accent-b);
+          }
+        }
+
+        // Submenu
+        ul.sub-menu {
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          top: 120%;
+          transition: var(--se--transition);
+          opacity: 0;
+          visibility: hidden;
+
+          li.menu-item {
+            list-style-type: none;
+          }
+        }
+
+        // Top level menu item hover
+        &:hover {
+          ul.sub-menu {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  // Sticky menu
+  &.sticky {
+    box-shadow: var(--se--box-shadow);
+
+    // Change Header Height
+    --se--header-height: 4rem;
+  }
+}

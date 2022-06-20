@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// This file contains all site-wide SCSS variables.
+// -----------------------------------------------------------------------------
+
+// @use '../01_abstracts/mixins' as *;
+
+// Global site breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  desktop: 1600px,
+  qhd: 2000px,
+);

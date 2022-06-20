@@ -1,0 +1,31 @@
+body #coiOverlay .coi-purpose-list {
+  margin: 0;
+}
+body #coiOverlay a {
+  color: var(--wp--preset--color--accent-b);
+}
+body #coiOverlay .coi-banner__policy {
+  margin-top: 1rem;
+  display: flex;
+  color: var(--wp--preset--color--accent-b);
+}
+body #coiOverlay .coi-banner__accept {
+  background: var(--wp--preset--color--accent-b);
+}
+body #coiOverlay .coi-banner__accept:hover {
+  background: var(--wp--preset--color--accent-d);
+}
+body #coiOverlay .coi-checkboxes input[type=checkbox]:checked + .checkbox-toggle {
+  background: var(--wp--preset--color--accent-b);
+}
+body #coiOverlay .ci-btn-tab-active h3,
+body #coiOverlay .coi-consent-banner__category-name:hover h3 {
+  color: var(--wp--preset--color--accent-b);
+}
+body #coiOverlay .cookiedeclaration_wrapper h2 {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+body #coiOverlay .coi-banner__headline {
+  font-weight: 600;
+}

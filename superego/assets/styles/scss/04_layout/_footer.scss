@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site
+// -----------------------------------------------------------------------------
+
+@use "../01_abstracts/mixins" as *;
+
+body footer#footer {
+  padding: var(--se--section-padding) 0;
+  background: var(--wp--preset--color--light-1);
+  position: relative;
+
+  #copyright {
+    margin-bottom: 0;
+
+    a {
+      @include LinkHover;
+    }
+  }
+}

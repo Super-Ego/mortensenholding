@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all typography styling
+// -----------------------------------------------------------------------------
+
+@use "../01_abstracts/index" as *;
+
+// Styling for headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+// Paragraph styling
+p {
+  margin-top: 0;
+  max-width: 88ch;
+
+  // Remove empty Gutenberg Paragraphs
+  &:empty {
+    display: none;
+  }
+}
+
+// Bold styling
+strong,
+body .strong {
+  font-weight: bolder;
+  line-height: 28px;
+}
+
+// Caption styling
+.caption {
+  font-size: 12px;
+  font-family: var(--se--heading-font);
+  margin-bottom: 0.5rem;
+  display: flex;
+  color: var(--wp--preset--color--dark-1);
+
+  &.overline {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}

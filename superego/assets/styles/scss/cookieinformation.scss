@@ -1,0 +1,42 @@
+// Standard Cookieinformation Styling
+body #coiOverlay {
+    .coi-purpose-list {
+        margin: 0;
+    }
+
+    a {
+        color: var(--wp--preset--color--accent-b);
+    }
+
+    .coi-banner__policy {
+        margin-top: 1rem;
+        display: flex;
+        color: var(--wp--preset--color--accent-b);
+    }
+
+    .coi-banner__accept {
+        background: var(--wp--preset--color--accent-b);
+
+        &:hover {
+            background: var(--wp--preset--color--accent-d);
+        }
+    }
+
+    .coi-checkboxes input[type="checkbox"]:checked + .checkbox-toggle {
+        background: var(--wp--preset--color--accent-b);
+    }
+
+    .ci-btn-tab-active h3,
+    .coi-consent-banner__category-name:hover h3 {
+        color: var(--wp--preset--color--accent-b);
+    }
+
+    .cookiedeclaration_wrapper h2 {
+        margin-bottom: 0.5em;
+        margin-top: 1em;
+    }
+
+    .coi-banner__headline {
+        font-weight: 600;
+    }
+}

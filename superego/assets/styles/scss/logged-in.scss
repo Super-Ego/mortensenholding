@@ -1,0 +1,98 @@
+// Style WP Adminbar
+#wpadminbar {
+    opacity: 0;
+    transition: var(--se--transition);
+    user-select: none;
+    display: none;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+#editMenu {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 99999999999999999;
+
+    .menuItem {
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: var(--wp--preset--color--dark-b);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        transition: var(--se--transition);
+        position: relative;
+
+        svg {
+            width: 24px;
+
+            path,
+            rect,
+            g {
+                stroke: var(--wp--preset--color--light-b) !important;
+            }
+        }
+
+        .tooltip {
+            position: absolute;
+            right: 75%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            margin: 0;
+            background-color: var(--wp--preset--color--dark-b);
+            color: var(--wp--preset--color--light-b);
+            padding: 0.3rem 0.6rem;
+            border-radius: 1rem;
+            white-space: nowrap;
+            transition: var(--se--transition);
+            visibility: hidden;
+            opacity: 0;
+            margin-right: 0.5rem;
+        }
+
+        &:not(#openEdit) {
+            &:hover {
+                background-color: var(--wp--preset--color--primary-b);
+
+                svg {
+                    transform: scale(0.9);
+                }
+
+                .tooltip {
+                    background-color: var(--wp--preset--color--primary-b);
+                    opacity: 1;
+                    visibility: visible;
+                    right: calc(100%);
+                }
+            }
+        }
+    }
+
+    #extraMenu {
+        position: absolute;
+        bottom: 75%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--se--transition);
+
+        .menuItem {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &:hover {
+        #extraMenu {
+            opacity: 1;
+            visibility: visible;
+            bottom: 100%;
+        }
+    }
+}

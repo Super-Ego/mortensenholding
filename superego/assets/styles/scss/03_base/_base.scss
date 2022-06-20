@@ -1,0 +1,132 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+// @use '../01_abstracts/index' as *;
+
+// Font smoothing + Box sizing
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+// Basic root element
+html {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+// Basic body styling (Not backend)
+body:not(.block-editor-writing-flow) {
+  overflow-x: hidden;
+  margin-top: var(--se--header-height);
+  accent-color: var(--wp--preset--color--primary-b);
+}
+
+// Wrapper styling
+#wrapper {
+  overflow: hidden; // Remove if position: sticky is needed on element
+}
+
+// Basic styling for links
+a {
+  text-decoration: none;
+  transition: var(--se--transition);
+  position: relative;
+}
+
+// Basic image styling
+img {
+  display: flex;
+  user-select: none;
+  pointer-events: none;
+  max-width: 100%;
+  height: auto;
+  transition: var(--se--transition);
+}
+
+figure {
+  &.image-figure {
+    overflow: hidden;
+    margin: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// Style WP Adminbar
+#wpadminbar {
+  opacity: 0;
+  transition: var(--se--transition);
+  user-select: none;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Selection color
+::selection {
+  background: var(--wp--preset--color--accent-b);
+  color: white;
+}
+
+// Remove arrows from number fields
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Remove arrows from number fields in Firefox
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+// No scrolling class
+.no-scroll {
+  overflow: hidden;
+}
+
+// Hidden class
+.hidden,
+[hidden] {
+  opacity: 0 !important;
+  visibility: visible !important;
+  display: none !important;
+}
+
+// Default SVG behavior
+svg {
+  transition: var(--se--transition);
+  transform-origin: center;
+
+  path,
+  rect,
+  circle {
+    transition: inherit;
+    transform-origin: inherit;
+  }
+}
+
+// Scrollbar styling
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--wp--preset--color--light-1);
+}
+
+// Scrollbar Thumb
+body::-webkit-scrollbar-thumb {
+  background-color: var(--wp--preset--color--primary-b);
+
+  &:hover {
+    background-color: var(--wp--preset--color--primary-l);
+  }
+}

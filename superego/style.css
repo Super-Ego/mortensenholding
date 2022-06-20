@@ -1,0 +1,68 @@
+/*
+Theme Name: Superego
+Theme URI: https://superego.nu/
+Description: Dette tema er special udviklet af Superego.
+Author: Superego
+Author URI: https://superego.nu/
+Version: 1.0
+License: GNU General Public License & MIT
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: Superego, SCSS, Responsive, AOS, Swiper, FancyBox, Lottie, Parallax
+*/
+body {
+  --se--success-b: #00ba88;
+  --se--success-l: #4ddeb7;
+  --se--success-d: #00966d;
+  --se--warning-b: #f4b740;
+  --se--warning-l: #ffd789;
+  --se--warning-d: #c39233;
+  --se--error-b: #ed5252;
+  --se--error-l: #ef8d8d;
+  --se--error-d: #c73131;
+  --se--content-width: 100%;
+  --se--full-width: 1600px;
+  --se--header-height: 5rem;
+  --se--section-padding: 3rem;
+  --se--transition: 300ms ease-out;
+  --se--transition-slow: 550ms ease-out;
+  --se--border-radius: 0;
+  --se--box-shadow: rgb(0 0 0 / 8%) 0 4px 40px 0px;
+  --bs-gutter-x: 2rem;
+  --swiper-theme-color: var(--wp--preset--color--accent-b);
+}
+@media only screen and (min-width: 576px) {
+  body {
+    --se--section-padding: 3rem;
+    --se--content-width: 540px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    --se--section-padding: 4rem;
+    --se--content-width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body {
+    --se--section-padding: 5rem;
+    --se--content-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    --se--section-padding: 6rem;
+    --se--content-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  body {
+    --se--section-padding: 7rem;
+    --se--content-width: 1320px;
+  }
+}
+@media only screen and (min-width: 2000px) {
+  body {
+    --se--section-padding: 9rem;
+    --se--content-width: 1400px;
+  }
+}

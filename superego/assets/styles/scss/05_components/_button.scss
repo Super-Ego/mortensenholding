@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+@use "../01_abstracts/mixins" as *;
+
+// Button wrapper
+.btn-wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
+// Main button styling
+.btn,
+.frm_button_submit {
+  @include Button;
+
+  // White button
+  &.white {
+    background-color: white;
+    color: var(--wp--preset--color--dark-b);
+    border-color: white;
+    transition: var(--se--transition);
+
+    &:hover {
+      background: var(--wp--preset--color--dark-b);
+      border-color: var(--wp--preset--color--dark-b);
+      color: white;
+    }
+  }
+
+  // Ghost button
+  &.outline {
+    @include OutlineButton;
+  }
+
+  // Align right
+  &.right {
+    margin-left: auto;
+  }
+}
+
+// Underline link
+.underline-btn {
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  width: fit-content;
+  transition: var(--se--transition);
+
+  @include LinkHover;
+}
+
+// WP Button Block
+.wp-block-buttons {
+  .wp-block-button {
+    // Standard WP Button
+    .wp-block-button__link {
+      @include Button;
+    }
+
+    // Outlined button
+    &.is-style-outline {
+      .wp-block-button__link {
+        @include OutlineButton;
+      }
+    }
+  }
+}

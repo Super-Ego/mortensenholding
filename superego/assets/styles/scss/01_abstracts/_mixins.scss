@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// This file contains all site-wide SCSS mixins.
+// -----------------------------------------------------------------------------
+
+// Set up SASS map
+@use "sass:map";
+@use "../01_abstracts/variables" as *;
+
+// Media min-width query mixin
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+// Media max-width query mixin
+@mixin mq-max($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+// Standard button mixin
+@mixin Button {
+  position: relative;
+  padding: 0 2rem;
+  height: 3.5rem;
+  width: fit-content;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0;
+  max-width: 420px;
+  background-color: var(--wp--preset--color--accent-b);
+  color: var(--wp--preset--color--light-b);
+  font-family: var(--se--button-font);
+  transition: var(--se--transition);
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: none;
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  outline: 0;
+  z-index: 9;
+  user-select: none;
+  border: 0;
+
+  &:hover {
+    background-color: var(--wp--preset--color--accent-d);
+  }
+
+  &:active {
+    transform: translateY(3px);
+    background-color: var(--wp--preset--color--accent-b);
+  }
+}
+
+//Outline button mixin
+@mixin OutlineButton {
+  background-color: transparent;
+  border: 1px solid var(--wp--preset--color--dark-b);
+  color: var(--wp--preset--color--dark-b);
+
+  &:hover {
+    background-color: var(--wp--preset--color--dark-b);
+    color: var(--wp--preset--color--light-b);
+  }
+}
+
+// Standard link hover
+@mixin LinkHover {
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--wp--preset--color--accent-b);
+    transform: scaleX(0);
+    transition: transform var(--se--transition);
+    transform-origin: right;
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}

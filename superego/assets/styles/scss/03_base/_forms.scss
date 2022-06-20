@@ -1,0 +1,168 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to all forms, inputs and more
+// -----------------------------------------------------------------------------
+
+@use "../01_abstracts/index" as *;
+
+// Formidable styling
+.frm_forms {
+    fieldset {
+        border: 0;
+        padding: 0;
+    }
+    .frm_screen_reader,
+    .frm_verify {
+        display: none;
+    }
+
+    .frm_fields_container {
+        max-width: 100%;
+
+        .frm_form_field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 0;
+
+            ::placeholder {
+                color: white;
+                user-select: none;
+            }
+
+            label {
+                position: absolute;
+                font-size: 14px;
+                left: calc(1rem + 1px);
+                top: 1.75rem;
+                transform: translateY(-50%);
+                transition: var(--se--transition);
+                z-index: 10;
+                pointer-events: none;
+
+                @include mq(md) {
+                    font-size: 16px;
+                    left: calc(1.5rem + 1px);
+                    top: 2rem;
+                }
+
+                .frm_required {
+                    color: var(--se--error-b);
+                }
+            }
+
+            .frm_checkbox {
+                cursor: pointer;
+
+                label {
+                    position: relative;
+                    color: var(--wp--preset--color--light-b);
+                    left: 0;
+                    top: 0;
+                    transform: none !important;
+                    font-size: 1rem !important;
+                    display: flex;
+                    pointer-events: all;
+                    cursor: pointer;
+                }
+
+                input {
+                    cursor: pointer;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    margin-right: 0.5rem;
+                    border-radius: 0;
+                    color: var(--wp--preset--color--accent-b);
+                    transition: var(--se--transition);
+                }
+            }
+
+            &:focus-within,
+            &.focus {
+                label {
+                    font-size: 12px;
+                    transform: translateY(-125%);
+                }
+                ::placeholder {
+                    color: var(--wp--preset--color--dark-2);
+                }
+            }
+
+            .frm_error {
+                position: absolute;
+                right: 1.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: var(--trans);
+                user-select: none;
+                pointer-events: none;
+                font-size: 14px;
+                color: var(--se--error-b);
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="tel"],
+            input[type="number"],
+            select,
+            textarea {
+                background-color: var(--wp--preset--color--light-b);
+                height: 3.5rem;
+                padding-left: 1rem;
+                padding-top: 0.9rem;
+                border: 1px solid var(--wp--preset--color--light-b);
+                border-radius: 0;
+                outline: 0;
+                color: var(--wp--preset--color--dark-b);
+                transition: var(--se--transition);
+                font-size: 16px;
+
+                @include mq(md) {
+                    height: 4rem;
+                    padding-left: 1.5rem;
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    border-color: var(--wp--preset--color--accent-b);
+                }
+
+                &:focus-within {
+                    border-color: var(--wp--preset--color--accent-b);
+                }
+
+                &[invalid="true"],
+                &[aria-invalid="true"] {
+                    border-color: var(--se--error-b);
+                }
+            }
+
+            select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: linear-gradient(45deg, transparent 50%, var(--wp--preset--color--light-b) 50%),
+                    linear-gradient(135deg, var(--wp--preset--color--light-b) 50%, transparent 50%);
+                background-position: calc(100% - 29px) calc(1em + 20%), calc(100% - 24px) calc(1em + 20%);
+                background-size: 5px 5px, 5px 5px, 1px 1.5em;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                background-color: var(--wp--preset--color--accent-b);
+                border-color: var(--wp--preset--color--accent-b);
+                color: var(--wp--preset--color--light-b);
+            }
+
+            textarea {
+                height: auto;
+                min-height: 6rem;
+                padding-top: 1.5rem;
+                width: 100%;
+                resize: vertical;
+            }
+        }
+    }
+
+    .frm_submit {
+        margin-top: 1rem;
+    }
+}

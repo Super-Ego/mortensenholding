@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to all sections
+// -----------------------------------------------------------------------------
+
+@use "../01_abstracts/mixins" as *;
+
+body section.section {
+  padding: var(--se--section-padding) 0;
+  transition: padding var(--se--transition);
+  position: relative;
+  background-color: inherit;
+  z-index: 9;
+  overflow: hidden;
+
+  .container,
+  .container-fluid {
+    * {
+      z-index: 9;
+    }
+  }
+
+  // Section background image
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .simpleParallax {
+      height: 100%;
+      width: 100%;
+    }
+
+    // Background image overlay
+    &.add-overlay {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        opacity: 0.2;
+        z-index: 1;
+      }
+    }
+  }
+
+  // Remove all padding
+  &.no-padding {
+    padding: 0;
+  }
+
+  // Remove padding top
+  &.no-padding-top {
+    padding-top: 0;
+  }
+
+  // Remove padding bottom
+  &.no-padding-bottom {
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,58 @@
+body #ie-no-support {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+  z-index: 1000000000000000200000000000000000000000000000000000000000000000;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+body #ie-no-support h1 {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-size: 64px;
+}
+body #ie-no-support h1,
+body #ie-no-support h2,
+body #ie-no-support h3 {
+  color: #333;
+}
+body #ie-no-support h1 span,
+body #ie-no-support h2 span,
+body #ie-no-support h3 span {
+  text-decoration: underline;
+}
+body #ie-no-support h3 {
+  font-size: 24px;
+  margin-bottom: 2rem;
+}
+body #ie-no-support p {
+  color: #444;
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+body #ie-no-support a {
+  color: blue;
+  text-decoration: underline;
+}
+body #ie-no-support a.btn {
+  margin: 0 auto;
+  margin-top: 4rem;
+  color: white !important;
+  background: blue !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  text-decoration: none;
+}
+body #ie-no-support a.btn::before, body #ie-no-support a.btn::after {
+  display: none !important;
+}
+body #ie-no-support .browsere img {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  display: block;
+}

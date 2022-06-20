@@ -1,0 +1,270 @@
+{
+    "version": 1,
+    "settings": {
+        "color": {
+            "custom": false,
+            "link": false,
+            "defaultPalette": false,
+            "customDuotone": false,
+            "customGradient": false,
+            "defaultGradients": false,
+            "gradients": [],
+            "duotone": [],
+            "palette": [
+                {
+                    "slug": "primary-b",
+                    "color": "#384C48",
+                    "name": "Primær Base"
+                },
+                {
+                    "slug": "primary-l",
+                    "color": "#435B56",
+                    "name": "Primær Lys"
+                },
+                {
+                    "slug": "primary-d",
+                    "color": "#2B3F3B",
+                    "name": "Primær Mørk"
+                },
+                {
+                    "slug": "secondary-b",
+                    "color": "#D8D6C5",
+                    "name": "Sekundær Base"
+                },
+                {
+                    "slug": "secondary-l",
+                    "color": "#F1EFE9",
+                    "name": "Sekundær Lys"
+                },
+                {
+                    "slug": "secondary-d",
+                    "color": "#D1CEB6",
+                    "name": "Sekundær Mørk"
+                },
+                {
+                    "slug": "accent-b",
+                    "color": "#3BE086",
+                    "name": "Accent Base"
+                },
+                {
+                    "slug": "accent-l",
+                    "color": "#61F1A3",
+                    "name": "Accent Lys"
+                },
+                {
+                    "slug": "accent-d",
+                    "color": "#27D375",
+                    "name": "Accent Mørk"
+                },
+                {
+                    "slug": "dark-b",
+                    "color": "#242B31",
+                    "name": "Mørk Base"
+                },
+                {
+                    "slug": "dark-1",
+                    "color": "#5F6F7C",
+                    "name": "Mørk 1"
+                },
+                {
+                    "slug": "dark-2",
+                    "color": "#93A0A3",
+                    "name": "Mørk 2"
+                },
+                {
+                    "slug": "light-b",
+                    "color": "#FCFCFC",
+                    "name": "Lys Base"
+                },
+                {
+                    "slug": "light-1",
+                    "color": "#F4F5F6",
+                    "name": "Lys 1"
+                },
+                {
+                    "slug": "light-2",
+                    "color": "#CCCFCA",
+                    "name": "Lys 2"
+                }
+            ]
+        },
+        "typography": {
+            "customLineHeight": true,
+            "customFontSize": false,
+            "customFontWeight": false,
+            "customFontStyle": true,
+            "customTextTransforms": true,
+            "dropCap": false,
+            "fontFamilies": [
+                {
+                    "fontFamily": "Helvetica, sans-serif",
+                    "slug": "heading-font",
+                    "Name": "Heading font"
+                },
+                {
+                    "fontFamily": "Helvetica, sans-serif",
+                    "slug": "body-font",
+                    "Name": "Body font"
+                }
+            ],
+            "fontSizes": [
+                {
+                    "slug": "h1",
+                    "size": "72px",
+                    "name": "H1"
+                },
+                {
+                    "slug": "h2",
+                    "size": "48px",
+                    "name": "H2"
+                },
+                {
+                    "slug": "h3",
+                    "size": "32px",
+                    "name": "H3"
+                },
+                {
+                    "slug": "h4",
+                    "size": "24px",
+                    "name": "H4"
+                },
+                {
+                    "slug": "h5",
+                    "size": "20px",
+                    "name": "H5"
+                },
+                {
+                    "slug": "h6",
+                    "size": "16px",
+                    "name": "H6"
+                },
+                {
+                    "slug": "large",
+                    "size": "21px",
+                    "name": "Stor"
+                },
+                {
+                    "slug": "body-regular",
+                    "size": "18px",
+                    "name": "Brødtekst"
+                },
+                {
+                    "slug": "body-small",
+                    "size": "14px",
+                    "name": "Lille"
+                }
+            ]
+        },
+        "spacing": {
+            "customPadding": false,
+            "customMargin": false,
+            "units": [
+                "px",
+                "em",
+                "rem",
+                "vh",
+                "vw"
+            ]
+        },
+        "layout": {
+            "contentSize": "1296px",
+            "wideSize": "1600px"
+        },
+        "custom": {
+            "line-height": {
+                "body": 1.5,
+                "heading": 1.33,
+                "title": 1.1
+            },
+            "font-weight": {
+                "light": 300,
+                "normal": "normal",
+                "bold": 700
+            }
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "var(--wp--preset--color--light-b)",
+            "text": "var(--wp--preset--color--dark-b)"
+        },
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--body-font)",
+            "fontSize": "var(--wp--preset--font-size--body-regular)",
+            "lineHeight": "var(--wp--custom--line-height--body)"
+        },
+        "elements": {
+            "link": {
+                "color": {
+                    "text": "var(--wp--preset--color--accent-b)"
+                }
+            },
+            "h1": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--heading-font)",
+                    "fontSize": "var(--wp--preset--font-size--h-1)",
+                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "lineHeight": "var(--wp--custom--line-height--title)"
+                },
+                "color": {
+                    "text": "var(--wp--preset--color--dark-b)"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--heading-font)",
+                    "fontSize": "var(--wp--preset--font-size--h-2)",
+                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                },
+                "color": {
+                    "text": "var(--wp--preset--color--dark-b)"
+                }
+            },
+            "h3": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--heading-font)",
+                    "fontSize": "var(--wp--preset--font-size--h-3)",
+                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                },
+                "color": {
+                    "text": "var(--wp--preset--color--dark-b)"
+                }
+            },
+            "h4": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--heading-font)",
+                    "fontSize": "var(--wp--preset--font-size--h-4)",
+                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                },
+                "color": {
+                    "text": "var(--wp--preset--color--dark-b)"
+                }
+            },
+            "h5": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--heading-font)",
+                    "fontSize": "var(--wp--preset--font-size--h-5)",
+                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                },
+                "color": {
+                    "text": "var(--wp--preset--color--dark-b)"
+                }
+            },
+            "h6": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--heading-font)",
+                    "fontSize": "var(--wp--preset--font-size--h-6)",
+                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "lineHeight": "var(--wp--custom--line-height--body)"
+                },
+                "color": {
+                    "text": "var(--wp--preset--color--dark-b)"
+                }
+            }
+        }
+    }
+}
