@@ -17,7 +17,6 @@ function add_editor_script()
         // Register Admin js
         wp_enqueue_script('admin-js', THEME . '/assets/scripts/admin.js', array('jquery'), false, false);
         wp_enqueue_script('swiper-js', THEME . '/assets/scripts/vendors/swiper-bundle.min.js', array('jquery'), false, false);
-        wp_enqueue_script('aos-3-js', THEME . '/assets/scripts/vendors/aos-3.js', array('jquery'), false, false);
         wp_enqueue_script('isotope-js', THEME . '/assets/scripts/vendors/isotope.pkgd.min.js', array('jquery'), false, false);
         wp_enqueue_script('fancybox-js', THEME . '/assets/scripts/vendors/fancybox.umd.js', array('jquery'), false, false);
         wp_enqueue_script('theme-editor', get_template_directory_uri() . '/assets/scripts/editor.js', ['wp-blocks', 'wp-dom'], filemtime(get_template_directory() . '/assets/scripts/editor.js'), true);

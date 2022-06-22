@@ -18,9 +18,6 @@ function site_scripts()
   // Register Bootstrap Grid Style
   wp_enqueue_style('bootstrap-5-grid', THEME . '/assets/styles/vendors/bootstrap-grid.min.css', [], filemtime(DIR . '/assets/styles/vendors/bootstrap-grid.min.css'), 'all');
 
-  // Register AOS Style 
-  wp_enqueue_style('aos', 'https://unpkg.com/aos@3.0.0-beta.4/dist/aos.css', [], null, 'all');
-
   // Register Cookieinformation Style (Enable if Cookieinformation)
   //wp_enqueue_style('cookieinformation-style', THEME . '/assets/styles/cookieinformation.css', [], filemtime(get_template_directory() . '/assets/styles/cookieinformation.css'), 'all');
 
@@ -33,10 +30,16 @@ function site_scripts()
   /* SCRIPTS */
 
   // Register Main JS
-  wp_enqueue_script('main', THEME . '/assets/scripts/main.js', ['jquery'], filemtime(DIR . '/assets/scripts/main.js'), false);
+  wp_enqueue_script('main', THEME . '/assets/scripts/main.js', ['jquery'], filemtime(DIR . '/assets/scripts/main.js'), true);
 
-  // Register AOS JS  (CDN)
-  wp_enqueue_script('aos', 'https://unpkg.com/aos@3.0.0-beta.4/dist/aos.js', ['jquery'], null, false);
+  // Register GSAP JS  (CDN)
+  wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js', ['jquery'], null, true);
+
+  // Register GSAP JS SrollTrigger  (CDN)
+  wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js', ['jquery', 'gsap'], null, true);
+
+  // Register GSAP JS
+  wp_enqueue_script('gsap-client', THEME . '/assets/scripts/gsap.js', ['jquery'], filemtime(DIR . '/assets/scripts/gsap.js'), true);
 
   // Register Simple Parallax JS (CDN)
   //wp_enqueue_script('simple-parallax-js', '//cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js', ['jquery'], null, false);

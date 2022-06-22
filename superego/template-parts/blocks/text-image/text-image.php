@@ -47,7 +47,7 @@ $imgAttr = [];
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <div class="gutenberg-content" data-aos="fade-in">
+                <div class="gutenberg-content">
                     <InnerBlocks allowedBlocks="<?= esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?= esc_attr(wp_json_encode($template)); ?>" />
                 </div>
             </div>

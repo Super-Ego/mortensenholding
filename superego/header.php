@@ -4,6 +4,11 @@ $code_head = get_theme_mod('setting_header_code');
 $code_body = get_theme_mod('setting_body_code');
 $theme_color = get_theme_mod('setting_theme_color');
 
+// Social media
+$social_facebook = get_theme_mod('setting_facebook');
+$social_linkedin = get_theme_mod('setting_linkedin');
+$social_instagram = get_theme_mod('setting_instagram');
+
 // get global Mobile Detect
 global $detect;
 ?>
@@ -52,22 +57,123 @@ Telefon: +45 78 70 29 29 - Email: horsens@superego.nu
 
 	<div id="wrapper" class="wrapper">
 		<header id="main-header" class="header" role="banner" aria-label="Site header">
-			<div class="container">
-				<div class="row">
 
-					<div class="col-6 col-sm-4">
-						<a id="site-logo" href="<?= get_home_url(); ?>" title="<? wp_title(); ?>">
-							<?= svg_image('logo'); ?>
-						</a>
+			<!-- Mobile menu -->
+			<? if ($detect->isMobile()) : ?>
+				<div class="container">
+					<div class="row">
+						<div class="col-8 d-flex justify-content-start align-items-center p-0">
+							<a id="site-logo" href="<?= get_home_url(); ?>" title="<? wp_title(); ?>">
+								<?= svg_image('logo_full') ?>
+							</a>
+						</div>
+						<div class="col-4 p-0">
+							<div id="menu-toggle-mobile" class="d-flex justify-content-end align-items-center">
+								<div id="toggle-mobile" class="not-active">
+									<div class="inner">
+										<span id="line_1"></span>
+										<span id="line_2"></span>
+										<span id="line_3"></span>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-
-					<div class="col-6 col-sm-8">
-						<nav id="main-navigation">
-							<? superego_top_nav(); ?>
-						</nav>
-					</div>
-
 				</div>
-			</div>
+
+				<div id="main-navigation-mobile" class="outOfBounds">
+					<nav>
+						<? superego_top_nav('main-nav-mobile'); ?>
+					</nav>
+
+					<div class="socials-mobile">
+						<? if ($social_facebook) : ?>
+							<a href="<?= $social_facebook; ?>" target="_blank" rel="noopener noreferrer" title="Facebook">
+								<?= svg_image('facebook_1.5x'); ?>
+							</a>
+						<? endif; ?>
+
+						<? if ($social_linkedin) : ?>
+							<a href="<?= $social_linkedin; ?>" target="_blank" rel="noopener noreferrer" title="Facebook">
+								<?= svg_image('linkedin_1.5x'); ?>
+							</a>
+						<? endif; ?>
+
+						<? if ($social_instagram) : ?>
+							<a href="<?= $social_instagram; ?>" target="_blank" rel="noopener noreferrer" title="Facebook">
+								<?= svg_image('instagram_1.5x'); ?>
+							</a>
+						<? endif; ?>
+					</div>
+
+					<div id="menufig-container-mobile">
+						<?= svg_image('menu_fig_mobile'); ?>
+					</div>
+				</div>
+
+				<!-- Desktop menu -->
+			<? else : ?>
+				<div class="container">
+					<div class="row">
+
+						<div class="d-flex justify-content-center align-items-start logo-container">
+							<a id="site-logo" href="<?= get_home_url(); ?>" title="<? wp_title(); ?>">
+								<?= svg_image('logo_fig'); ?>
+								<div class="logo-text">
+									<?= svg_image('logo_text'); ?>
+								</div>
+							</a>
+						</div>
+
+						<div id="menu-toggle" class="d-flex justify-content-center align-items-center">
+							<div id="toggle" class="not-active">
+								<div class="inner">
+									<span id="line_1"></span>
+									<span id="line_2"></span>
+									<span id="line_3"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="d-flex justify-content-center align-items-end socials-container">
+							<div class="socials">
+								<div class="facebook">
+									<? if ($social_facebook) : ?>
+										<a href="<?= $social_facebook; ?>" target="_blank" rel="noopener noreferrer" title="Facebook">
+											<?= svg_image('facebook'); ?>
+										</a>
+									<? endif; ?>
+								</div>
+								<div class="linkedin">
+									<? if ($social_linkedin) : ?>
+										<a href="<?= $social_linkedin; ?>" target="_blank" rel="noopener noreferrer" title="Facebook">
+											<?= svg_image('linkedin'); ?>
+										</a>
+									<? endif; ?>
+								</div>
+								<div class="instagram">
+									<? if ($social_instagram) : ?>
+										<a href="<?= $social_instagram; ?>" target="_blank" rel="noopener noreferrer" title="Facebook">
+											<?= svg_image('instagram'); ?>
+										</a>
+									<? endif; ?>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div id="main-navigation" class="outOfBounds">
+					<nav>
+						<? superego_top_nav('main-nav'); ?>
+					</nav>
+
+					<div id="menufig-container">
+						<?= svg_image('menu_fig'); ?>
+					</div>
+				</div>
+			<? endif; ?>
 		</header>
+
 		<!-- end #main-header -->

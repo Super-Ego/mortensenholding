@@ -1,3 +1,88 @@
 // -----------------------------------------------------------------------------
 // This file contains all site-wide CSS Keyframe animations.
 // -----------------------------------------------------------------------------
+
+// Animation for burger menu
+@keyframes top-1 {
+    0% {
+        top: 0;
+        transform: rotate(0);
+    }
+    50% {
+        top: 6px;
+        transform: rotate(0);
+    }
+    100% {
+        top: 6px;
+        transform: rotate(45deg);
+        background-color: var(--wp--preset--color--accent-b);
+    }
+}
+
+@keyframes top-2 {
+    0% {
+        top: 6px;
+        transform: rotate(45deg);
+    }
+    50% {
+        top: 6px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bottom-1 {
+    0% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+    50% {
+        bottom: 6px;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: 6px;
+        transform: rotate(135deg);
+        background-color: var(--wp--preset--color--accent-b);
+    }
+}
+
+@keyframes bottom-2 {
+    0% {
+        bottom: 6px;
+        transform: rotate(135deg);
+    }
+    50% {
+        bottom: 6px;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+}
+
+@keyframes scaled-1 {
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0);
+        background-color: var(--wp--preset--color--accent-b);
+    }
+}
+
+@keyframes scaled-2 {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

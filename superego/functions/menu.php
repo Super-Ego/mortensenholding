@@ -9,11 +9,11 @@ register_nav_menus(
 );
 
 // Primary menu
-function superego_top_nav()
+function superego_top_nav($id)
 {
 	wp_nav_menu(array(
 		'container'			=> false,									// Remove nav container
-		'menu_id'			=> 'main-nav',								// Adding custom nav id
+		'menu_id'			=> $id,										// Adding custom nav id
 		'menu_class'		=> 'header-menu menu',						// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'theme_location'	=> 'main-nav',								// Where it's located in the theme

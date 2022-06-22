@@ -44,9 +44,9 @@ require(get_template_directory() . '/functions/block-settings.php');
             ?>
 
                 <div class="col-md-6 medarbejder-column">
-                    <div class="medarbejder" data-aos="fade-up">
+                    <div class="medarbejder">
                         <figure class="image-figure">
-                            <?= the_post_thumbnail('full', ['data-aos' => 'zoom-out', 'data-aos-anchor-placement' => 'top-bottom']); ?>
+                            <?= the_post_thumbnail('full'); ?>
                         </figure>
                         <div class="medarbejder__inner">
                             <h3 class="medarbejder__navn"><?= get_the_title($post->ID); ?></h3>

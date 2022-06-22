@@ -13,47 +13,62 @@
             "palette": [
                 {
                     "slug": "primary-b",
-                    "color": "#384C48",
+                    "color": "#384649",
                     "name": "Primær Base"
                 },
                 {
                     "slug": "primary-l",
-                    "color": "#435B56",
+                    "color": "#415155",
                     "name": "Primær Lys"
                 },
                 {
                     "slug": "primary-d",
-                    "color": "#2B3F3B",
+                    "color": "#2F3B3D",
                     "name": "Primær Mørk"
                 },
                 {
                     "slug": "secondary-b",
-                    "color": "#D8D6C5",
+                    "color": "#95A19F",
                     "name": "Sekundær Base"
                 },
                 {
                     "slug": "secondary-l",
-                    "color": "#F1EFE9",
+                    "color": "#A0ABA9",
                     "name": "Sekundær Lys"
                 },
                 {
                     "slug": "secondary-d",
-                    "color": "#D1CEB6",
+                    "color": "#8A9795",
+                    "name": "Sekundær Mørk"
+                },
+                {
+                    "slug": "secondary-b-2",
+                    "color": "#EAEAEA",
+                    "name": "Sekundær Base"
+                },
+                {
+                    "slug": "secondary-l-2",
+                    "color": "#FAFAFA",
+                    "name": "Sekundær Lys"
+                },
+                {
+                    "slug": "secondary-d-2",
+                    "color": "#EBEBEB",
                     "name": "Sekundær Mørk"
                 },
                 {
                     "slug": "accent-b",
-                    "color": "#3BE086",
+                    "color": "#F0AF13",
                     "name": "Accent Base"
                 },
                 {
                     "slug": "accent-l",
-                    "color": "#61F1A3",
+                    "color": "#F1B626",
                     "name": "Accent Lys"
                 },
                 {
                     "slug": "accent-d",
-                    "color": "#27D375",
+                    "color": "#E0A30E",
                     "name": "Accent Mørk"
                 },
                 {
@@ -63,27 +78,27 @@
                 },
                 {
                     "slug": "dark-1",
-                    "color": "#5F6F7C",
+                    "color": "#4F5F6C",
                     "name": "Mørk 1"
                 },
                 {
                     "slug": "dark-2",
-                    "color": "#93A0A3",
+                    "color": "#8092A1",
                     "name": "Mørk 2"
                 },
                 {
                     "slug": "light-b",
-                    "color": "#FCFCFC",
+                    "color": "#FFFFFF",
                     "name": "Lys Base"
                 },
                 {
                     "slug": "light-1",
-                    "color": "#F4F5F6",
+                    "color": "#F5F7F8",
                     "name": "Lys 1"
                 },
                 {
                     "slug": "light-2",
-                    "color": "#CCCFCA",
+                    "color": "#BAC4CD",
                     "name": "Lys 2"
                 }
             ]
@@ -97,12 +112,12 @@
             "dropCap": false,
             "fontFamilies": [
                 {
-                    "fontFamily": "Helvetica, sans-serif",
+                    "fontFamily": "'Manrope', sans-serif",
                     "slug": "heading-font",
                     "Name": "Heading font"
                 },
                 {
-                    "fontFamily": "Helvetica, sans-serif",
+                    "fontFamily": "'Manrope', sans-serif",
                     "slug": "body-font",
                     "Name": "Body font"
                 }
@@ -110,7 +125,7 @@
             "fontSizes": [
                 {
                     "slug": "h1",
-                    "size": "72px",
+                    "size": "56px",
                     "name": "H1"
                 },
                 {
@@ -130,12 +145,12 @@
                 },
                 {
                     "slug": "h5",
-                    "size": "20px",
+                    "size": "18px",
                     "name": "H5"
                 },
                 {
                     "slug": "h6",
-                    "size": "16px",
+                    "size": "18px",
                     "name": "H6"
                 },
                 {
@@ -150,7 +165,7 @@
                 },
                 {
                     "slug": "body-small",
-                    "size": "14px",
+                    "size": "15px",
                     "name": "Lille"
                 }
             ]
@@ -179,7 +194,8 @@
             "font-weight": {
                 "light": 300,
                 "normal": "normal",
-                "bold": 700
+                "bold": 700,
+                "extra-bold": 800
             }
         }
     },
@@ -203,7 +219,7 @@
                 "typography": {
                     "fontFamily": "var(--wp--preset--font-family--heading-font)",
                     "fontSize": "var(--wp--preset--font-size--h-1)",
-                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "fontWeight": "var(--wp--custom--font-weight--extra-bold)",
                     "lineHeight": "var(--wp--custom--line-height--title)"
                 },
                 "color": {
@@ -247,7 +263,7 @@
                 "typography": {
                     "fontFamily": "var(--wp--preset--font-family--heading-font)",
                     "fontSize": "var(--wp--preset--font-size--h-5)",
-                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "fontWeight": "var(--wp--custom--font-weight--extra-bold)",
                     "lineHeight": "var(--wp--custom--line-height--heading)"
                 },
                 "color": {
@@ -258,7 +274,7 @@
                 "typography": {
                     "fontFamily": "var(--wp--preset--font-family--heading-font)",
                     "fontSize": "var(--wp--preset--font-size--h-6)",
-                    "fontWeight": "var(--wp--custom--font-weight--normal)",
+                    "fontWeight": "var(--wp--custom--font-weight--extra-bold)",
                     "lineHeight": "var(--wp--custom--line-height--body)"
                 },
                 "color": {

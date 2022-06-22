@@ -41,7 +41,7 @@ $template = [
 <section id="<?= esc_attr($id); ?>" class="section <?= esc_attr($className); ?> <?= $custom_classes; ?>">
 	<div class="container">
 		<div class="row">
-			<div class="col gutenberg-content" data-aos="fade-in">
+			<div class="col gutenberg-content">
 				<InnerBlocks allowedBlocks="<?= esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?= esc_attr(wp_json_encode($template)); ?>" />
 			</div>
 		</div>

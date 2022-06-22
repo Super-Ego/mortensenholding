@@ -2,7 +2,7 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
-// @use '../01_abstracts/index' as *;
+@use '../01_abstracts/index' as *;
 
 // Font smoothing + Box sizing
 *,
@@ -26,6 +26,11 @@ body:not(.block-editor-writing-flow) {
   overflow-x: hidden;
   margin-top: var(--se--header-height);
   accent-color: var(--wp--preset--color--primary-b);
+
+  @include mq(lg) {
+    margin-top: 0;
+    margin-left: var(--se--header-width);
+  }
 }
 
 // Wrapper styling
