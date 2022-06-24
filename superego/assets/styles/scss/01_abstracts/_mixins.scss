@@ -40,11 +40,11 @@
   color: var(--wp--preset--color--light-b);
   font-family: var(--se--button-font);
   transition: var(--se--transition);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   text-transform: none;
   text-decoration: none;
-  border-radius: 0;
+  border-radius: 100px;
   cursor: pointer;
   white-space: nowrap;
   outline: 0;
@@ -58,18 +58,26 @@
 
   &:active {
     transform: translateY(3px);
-    background-color: var(--wp--preset--color--accent-b);
+    background-color: var(--wp--preset--color--accent-l);
   }
 }
 
 //Outline button mixin
 @mixin OutlineButton {
   background-color: transparent;
-  border: 1px solid var(--wp--preset--color--dark-b);
-  color: var(--wp--preset--color--dark-b);
+  border: 1px solid var(--wp--preset--color--secondary-b);
+  color: var(--wp--preset--color--secondary-b);
 
   &:hover {
-    background-color: var(--wp--preset--color--dark-b);
+    background-color: var(--wp--preset--color--accent-d);
+    border: 1px solid var(--wp--preset--color--accent-d);
+    color: var(--wp--preset--color--light-b);
+  }
+
+  &:active {
+    transform: translateY(3px);
+    background-color: var(--wp--preset--color--accent-l);
+    border: 1px solid var(--wp--preset--color--accent-l);
     color: var(--wp--preset--color--light-b);
   }
 }

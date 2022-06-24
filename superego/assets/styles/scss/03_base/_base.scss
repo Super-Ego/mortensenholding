@@ -135,3 +135,10 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--wp--preset--color--primary-l);
   }
 }
+
+body #main {
+
+  @include mq(lg) {
+    width: calc(100vw - var(--se--header-width));
+  }
+}

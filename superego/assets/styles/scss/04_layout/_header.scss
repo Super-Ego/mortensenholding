@@ -36,7 +36,8 @@ body header#main-header {
         padding: 1rem 0;
       }
 
-      .logo-container, .socials-container {
+      .logo-container,
+      .socials-container {
         height: 15%;
       }
 
@@ -60,13 +61,14 @@ body header#main-header {
       #menu-toggle-mobile {
         height: 100%;
       }
-      
+
       #menu-toggle {
         height: 70%;
         cursor: pointer;
       }
 
-      .facebook, .linkedin {
+      .facebook,
+      .linkedin {
         margin-bottom: 1rem;
       }
     }
@@ -184,7 +186,7 @@ body header#main-header {
     background-color: var(--wp--preset--color--primary-b);
     align-items: flex-start;
     z-index: -2;
-    
+
     nav {
       margin-left: 3rem;
       width: 100%;
@@ -278,17 +280,18 @@ body header#main-header {
 }
 
 // Menu toggle
-#menu-toggle, #menu-toggle-mobile {
-
-  #toggle, #toggle-mobile {
+#menu-toggle,
+#menu-toggle-mobile {
+  #toggle,
+  #toggle-mobile {
     cursor: pointer;
     transition: var(--trans);
     width: 24px;
-  
+
     .inner {
       transition: var(--trans);
       width: 100%;
-  
+
       span {
         display: block;
         width: 100%;
@@ -298,43 +301,43 @@ body header#main-header {
         transition: all 0.3s;
         position: relative;
       }
-  
+
       span + span {
         margin-top: 6px;
       }
     }
-  
+
     &.not-active {
       span {
         &#line_1 {
           animation: ease 0.7s top-2 forwards;
         }
-  
+
         &#line_2 {
           animation: ease 0.7s scaled-2 forwards;
         }
-  
+
         &#line_3 {
           animation: ease 0.7s bottom-2 forwards;
         }
       }
     }
-  
+
     &.active {
       span {
         &#line_1 {
           animation: ease 0.7s top-1 forwards;
         }
-  
+
         &#line_2 {
           animation: ease 0.7s scaled-1 forwards;
         }
-  
+
         &#line_3 {
           animation: ease 0.7s bottom-1 forwards;
         }
       }
-  
+
       span + span {
         margin-top: 4px;
       }

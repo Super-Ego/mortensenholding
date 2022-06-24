@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// Selskaber Block styling
+// -----------------------------------------------------------------------------
+
+@use "../../../assets/styles/scss/01_abstracts/mixins" as *;
+
+section.selskaber-block {
+
+    .row {
+
+        @include mq(lg) {
+            
+            h2 {
+                margin-bottom: 4rem;
+            }
+        }
+
+        @include mq(xl) {
+
+            column-gap: 4rem;
+
+            .col-lg-4 {
+                width: calc(33.3333333333% - 5rem);
+                flex: auto;
+            }
+        }
+    }
+
+    .selskab-container:nth-child(3) {
+        margin-top: 7rem;
+    }
+    
+    .image-figure {
+        background: var(--wp--preset--color--secondary-b-2);
+        width: 100%;
+        height: 200px;
+        padding: 0 4rem;
+        display: flex;
+        align-items: center;
+
+        @include mq(sm) {
+            height: 250px;
+            padding: 0 8rem;
+        }
+        
+        @include mq(md) {
+            padding: 0 3rem;
+        }
+        
+        @include mq(xxl) {
+            padding: 0 5rem;
+        }
+    }
+
+    .selskab-title-container {
+
+        .selskab-branche {
+            color: var(--wp--preset--color--dark-2);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .selskab-title {
+            color: var(--wp--preset--color--dark-1);
+        }
+    }
+}

@@ -199,6 +199,16 @@ if (class_exists('ACF')) :
 			file_get_contents(get_template_directory() . '/assets/images/blocks/slider.svg'),
 			['Swiper', 'Slider'],
 		),
+		
+		// Selskaber block
+		$selskaber = new ACF_Block(
+			'selskaber-block',
+			'Selskaber block',
+			'Block til visning af selskaber',
+			'superego-blocks',
+			'admin-multisite',
+			['Swiper', 'Slider'],
+		),
 	];
 
 	// Array for all custom allowed blocks

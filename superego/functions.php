@@ -27,8 +27,8 @@ require_once(DIR . '/functions/sidebar.php');
 // Register Advanced Custom Fields settings
 require_once(DIR . '/functions/acf.php');
 
-// Add custom posttype and taxonomy
-require_once(DIR . '/functions/custom-post-type.php');
+// Add Selskaber post type and taxonomy
+require_once(DIR . '/functions/selskaber-cpt.php');
 
 // Add Employee Custom Post type
 require_once(DIR . '/functions/medarbejdere.php');

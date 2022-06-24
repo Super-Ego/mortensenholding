@@ -2,4 +2,50 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-@use '../01_abstracts/index' as *;
+@use "../01_abstracts/index" as *;
+
+body.home {
+  #frontpage-banner {
+    height: 70vh;
+    width: calc(100% + 2px);
+    left: -1px;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+
+      .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .banner-content {
+          max-width: 600px;
+
+          h1 {
+            color: var(--wp--preset--color--light-b);
+            margin-bottom: 1.5rem;
+          }
+          
+          p {
+            color: var(--wp--preset--color--light-b);
+            margin-bottom: 2rem;
+          }
+        }
+      }
+
+      .background-image {
+        .inner {
+          width: 100%;
+          height: 100%;
+
+          svg {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
