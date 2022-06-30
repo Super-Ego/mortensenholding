@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// Text & Animation block styling
+// -----------------------------------------------------------------------------
+
+@use "../../../assets/styles/scss/01_abstracts/mixins" as *;
+
+body section.text-animation-block {
+  .container {
+    width: auto;
+    
+    @include mq-max(lg) {
+      padding-top: var(--se--section-padding);
+    }
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  .animation-container {
+    margin-top: 4rem;
+
+    svg {
+      @include mq-max(lg) {
+        max-height: 40vh;
+      }
+    }
+  }
+}

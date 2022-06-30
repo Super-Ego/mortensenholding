@@ -6,9 +6,16 @@
 
 body.home {
   #frontpage-banner {
-    height: 70vh;
-    width: calc(100% + 2px);
-    left: -1px;
+    @include mq(md) {
+      padding: 6rem 0;
+    }
+
+    @include mq(lg) {
+      padding: var(--se--section-padding) 0;
+      height: 70vh;
+      width: calc(100% + 2px);
+      left: -1px;
+    }
 
     .wrapper {
       width: 100%;
@@ -18,6 +25,10 @@ body.home {
         height: 100%;
         display: flex;
         align-items: center;
+
+        @include mq-max(sm) {
+          width: auto;
+        }
 
         .banner-content {
           max-width: 600px;
@@ -40,9 +51,38 @@ body.home {
           height: 100%;
 
           svg {
+            height: 100%;
             position: absolute;
             right: 0;
             bottom: 0;
+
+            @include mq(sm) {
+              width: 100%;
+            }
+
+            @include mq(xxl) {
+              height: 100%;
+              width: auto;
+            }
+
+            @include mq(desktop) {
+              width: 100%;
+            }
+            
+            @include mq(qhd) {
+              height: auto;
+              width: auto;
+            }
+          }
+
+          .image-figure {
+            height: 100%;
+            background-color: var(--wp--preset--color--primary-b);
+
+            img {
+              width: 80%;
+              margin-left: auto;
+            }
           }
         }
       }

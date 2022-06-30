@@ -189,6 +189,16 @@ if (class_exists('ACF')) :
 			file_get_contents(get_template_directory() . '/assets/images/blocks/text-image.svg'),
 			['Tekst', 'Billede', 'Text', 'Image'],
 		),
+		
+		// Text & Animation block
+		$textImage = new ACF_Block(
+			'text-animation',
+			'Tekst & Animation',
+			'Tekst og animation blok',
+			'superego-blocks',
+			file_get_contents(get_template_directory() . '/assets/images/blocks/text-image.svg'),
+			['Tekst', 'Animation', 'Text'],
+		),
 
 		// Standard Swiper block
 		$swiper = new ACF_Block(
@@ -206,8 +216,38 @@ if (class_exists('ACF')) :
 			'Selskaber block',
 			'Block til visning af selskaber',
 			'superego-blocks',
+			'admin-site-alt',
+			['Selskaber'],
+		),
+		
+		// Selskaber block
+		$ejendomme = new ACF_Block(
+			'ejendomme-block',
+			'Ejendomme block',
+			'Block til visning af ejendomme',
+			'superego-blocks',
 			'admin-multisite',
-			['Swiper', 'Slider'],
+			['Selskaber'],
+		),
+		
+		// Staggered columns block
+		$staggered_columns = new ACF_Block(
+			'staggered-columns',
+			'Forskudte kolonner',
+			'Block til forskudte kolonner',
+			'superego-blocks',
+			'columns',
+			['Kolonner'],
+		),
+		
+		// Page content block
+		$page_content = new ACF_Block(
+			'page-content-block',
+			'Underside indhold',
+			'Block til indhold på undersider',
+			'superego-blocks',
+			'welcome-write-blog',
+			['Indhold'],
 		),
 	];
 

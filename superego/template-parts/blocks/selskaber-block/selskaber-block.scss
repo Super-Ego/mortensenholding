@@ -5,64 +5,107 @@
 @use "../../../assets/styles/scss/01_abstracts/mixins" as *;
 
 section.selskaber-block {
+  .container {
+    width: auto;
+  }
 
-    .row {
+  .content {
+    @include mq(lg) {
+      h2 {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  .selskaber-grid {
+    --bs-gutter-y: 3rem;
+
+    @include mq(lg) {
+      --bs-gutter-x: 5rem;
+      --bs-gutter-y: 7rem;
+    }
+
+    .selskab-item {
+      a {
+        transition: var(--se--transition);
+
+        &:hover {
+          .image-figure {
+            background: var(--wp--preset--color--secondary-d-2);
+
+            &::after {
+              transform: scaleX(1);
+              transform-origin: left;
+            }
+          }
+        }
+      }
+      
+      &:nth-of-type(2) {
+        @include mq(lg) {
+          margin-top: calc(var(--bs-gutter-y) * 2);
+        }
+      }
+      
+      .image-figure {
+        transition: var(--se--transition);
+        background: var(--wp--preset--color--secondary-l-2);
+        height: 200px;
+        // width: 100%;
+        width: auto;
+        padding: 0 5rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        @include mq(sm) {
+          height: 250px;
+          padding: 0 10rem;
+        }
+
+        @include mq(md) {
+          padding: 0 4rem;
+        }
 
         @include mq(lg) {
-            
-            h2 {
-                margin-bottom: 4rem;
-            }
+          padding: 0 6rem;
         }
 
         @include mq(xl) {
-
-            column-gap: 4rem;
-
-            .col-lg-4 {
-                width: calc(33.3333333333% - 5rem);
-                flex: auto;
-            }
+          padding: 0 4rem;
         }
-    }
 
-    .selskab-container:nth-child(3) {
-        margin-top: 7rem;
-    }
-    
-    .image-figure {
-        background: var(--wp--preset--color--secondary-b-2);
-        width: 100%;
-        height: 200px;
-        padding: 0 4rem;
-        display: flex;
-        align-items: center;
-
-        @include mq(sm) {
-            height: 250px;
-            padding: 0 8rem;
-        }
-        
-        @include mq(md) {
-            padding: 0 3rem;
-        }
-        
         @include mq(xxl) {
-            padding: 0 5rem;
+          padding: 0 5rem;
         }
-    }
 
-    .selskab-title-container {
+        &::after {
+          content: "";
+          width: 90%;
+          height: 8px;
+          background: var(--wp--preset--color--accent-b);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transform: scaleX(0);
+          transition: transform var(--se--transition);
+          transform-origin: left;
+        }
+      }
 
+      .selskab-title-container {
         .selskab-branche {
-            color: var(--wp--preset--color--dark-2);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 400;
+          color: var(--wp--preset--color--dark-2);
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          font-weight: 400;
         }
 
         .selskab-title {
-            color: var(--wp--preset--color--dark-1);
+          color: var(--wp--preset--color--dark-1);
+          margin-bottom: 0;
         }
+      }
     }
+  }
 }

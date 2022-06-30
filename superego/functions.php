@@ -33,6 +33,9 @@ require_once(DIR . '/functions/selskaber-cpt.php');
 // Add Employee Custom Post type
 require_once(DIR . '/functions/medarbejdere.php');
 
+// Add Ejendom Custom Post type
+require_once(DIR . '/functions/ejendomme-cpt.php');
+
 // Replace 'older/newer' post links with numbered navigation
 require_once(DIR . '/functions/page-navi.php');
 

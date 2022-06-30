@@ -25,7 +25,9 @@ $loading = ['loading' => 'eager'];
         <div class="background-image">
             <div class="inner">
                 <?= svg_image('mortensen-overlay') ?>
-                <?= wp_get_attachment_image($frontpage_baggrundsbillede, 'full', false, $loading); ?>
+                <figure class="image-figure">
+                    <?= wp_get_attachment_image($frontpage_baggrundsbillede, 'full', false, $loading); ?>
+                </figure>
             </div>
         </div>
     </div>

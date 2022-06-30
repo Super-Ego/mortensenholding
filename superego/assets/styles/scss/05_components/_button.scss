@@ -66,5 +66,9 @@
         @include OutlineButton;
       }
     }
+
+    &.dark .wp-element-button {
+      @include DarkButton;
+    }
   }
 }

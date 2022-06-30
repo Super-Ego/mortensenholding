@@ -72,6 +72,16 @@ jQuery(document).ready(function ($) {
     "-=1"
   );
 
+  menuTimeline.to(
+    ".nav-overlay",
+    {
+      duration: 1,
+      ease: "power2.out",
+      autoAlpha: 1,
+    },
+    "-=0.5"
+  );
+
   $("#menu-toggle").click(function () {
     if (
       $("#main-navigation").hasClass("outOfBounds") &&
@@ -88,12 +98,27 @@ jQuery(document).ready(function ($) {
       $(".logo-text").removeClass("logo-text--scrolled");
     } else if ($(document).scrollTop() > 80) {
       menuTimeline.reverse();
-      $("body").removeClass("no-scroll");
       $(".logo-text").addClass("logo-text--scrolled");
+      setTimeout(function () {
+        $("body").removeClass("no-scroll");
+      }, 900);
     } else {
       menuTimeline.reverse();
-      $("body").removeClass("no-scroll");
+      setTimeout(function () {
+        $("body").removeClass("no-scroll");
+      }, 900);
     }
+
+    $("#toggle").toggleClass("active");
+    $("#main-header").toggleClass("open-menu");
+    $("#main-navigation").toggleClass("outOfBounds");
+  });
+
+  $(".nav-overlay").click(function () {
+    menuTimeline.reverse();
+    setTimeout(function () {
+      $("body").removeClass("no-scroll");
+    }, 900);
 
     $("#toggle").toggleClass("active");
     $("#main-header").toggleClass("open-menu");
@@ -116,7 +141,7 @@ jQuery(document).ready(function ($) {
     },
     "-=0.8"
   );
-  
+
   menuTimelineMobile.from(
     "#menufig-container-mobile",
     {

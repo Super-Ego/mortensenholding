@@ -25,7 +25,7 @@ body.wp-admin {
 	--wp-admin-theme-color-darker-20: var(--wp--preset--color--accent-l);
 
 	::selection {
-		background: var(--wp--preset--color--primary-b, blue) !important;
+		background: #384649 !important;
 		color: white !important;
 	}
 }
@@ -193,12 +193,12 @@ $border-color: hsl(0, 0%, 85%);
 		}
 
 		&:hover {
-			border-color: var(--wp--preset--color--accent-b);
+			border-color: #F0AF13;
 		}
 
 		&:checked {
 			&::before {
-				background-color: var(--wp--preset--color--accent-b);
+				background-color: #F0AF13;
 			}
 		}
 	}
@@ -384,7 +384,7 @@ table.wp-list-table {
 
 ::selection {
 	color: white;
-	background-color: var(--wp-admin-theme-color);
+	background: #384649 !important;
 }
 
 // YOAST PREMIUM
@@ -470,6 +470,7 @@ body#tinymce {
 	padding: 1rem !important;
 
 	::selection {
-		background-color: black !important;
+		background-color: #384649 !important;
+		color: white;
 	}
 }

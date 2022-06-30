@@ -12,11 +12,11 @@ body.wp-admin {
   --wp-admin-theme-color-darker-20: var(--wp--preset--color--accent-l);
 }
 body.wp-admin ::-moz-selection {
-  background: var(--wp--preset--color--primary-b, blue) !important;
+  background: #384649 !important;
   color: white !important;
 }
 body.wp-admin ::selection {
-  background: var(--wp--preset--color--primary-b, blue) !important;
+  background: #384649 !important;
   color: white !important;
 }
 
@@ -196,11 +196,11 @@ table.fixed {
 }
 #wpbody-content input[type=radio]:hover,
 #customize-controls input[type=radio]:hover {
-  border-color: var(--wp--preset--color--accent-b);
+  border-color: #F0AF13;
 }
 #wpbody-content input[type=radio]:checked::before,
 #customize-controls input[type=radio]:checked::before {
-  background-color: var(--wp--preset--color--accent-b);
+  background-color: #F0AF13;
 }
 #wpbody-content input[type=checkbox],
 #customize-controls input[type=checkbox] {
@@ -376,12 +376,12 @@ table.wp-list-table tbody#the-comment-list tr.no-items td.colspanchange {
 
 ::-moz-selection {
   color: white;
-  background-color: var(--wp-admin-theme-color);
+  background: #384649 !important;
 }
 
 ::selection {
   color: white;
-  background-color: var(--wp-admin-theme-color);
+  background: #384649 !important;
 }
 
 .yoast_premium_upsell,
@@ -452,8 +452,10 @@ body#tinymce {
   padding: 1rem !important;
 }
 body#tinymce ::-moz-selection {
-  background-color: black !important;
+  background-color: #384649 !important;
+  color: white;
 }
 body#tinymce ::selection {
-  background-color: black !important;
+  background-color: #384649 !important;
+  color: white;
 }

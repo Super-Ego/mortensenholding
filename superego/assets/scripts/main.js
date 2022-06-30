@@ -18,4 +18,13 @@ jQuery(document).ready(function ($) {
   $('#main-nav').addClass("h2");
   $('#main-nav-mobile').addClass("h1");
 
+  // Isotopes
+  $('.selskaber-grid').isotope({
+    itemSelector: '.selskab-item',
+  });
+  
+  $('.kolonner-grid').isotope({
+    itemSelector: '.kolonne-item',
+  });
+
 }); // End document.ready

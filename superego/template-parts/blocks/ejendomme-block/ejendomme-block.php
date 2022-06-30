@@ -1,7 +1,7 @@
 <?
 
 /**
- * Selskaber Block
+ * Ejendomme Block
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -10,7 +10,7 @@
  */
 
 // Define block name
-$blockName = 'selskaber';
+$blockName = 'ejendomme';
 
 // Create id attribute
 $id = $blockName . '-' . $block['id'];
@@ -36,11 +36,11 @@ $allowed_blocks = ['core/heading', 'core/paragraph', 'core/list', 'core/html', '
             </div>
         </div>
 
-        <div class="selskaber-grid row">
+        <div class="ejendomme-grid row">
             <?
             // WP_Query arguments
             $args = array(
-                'post_type'      => 'selskaber',
+                'post_type'      => 'ejendomme',
                 'posts_per_page' => -1,
                 'order'          => 'ASC',
                 'orderby'        => 'menu_order',
@@ -48,21 +48,23 @@ $allowed_blocks = ['core/heading', 'core/paragraph', 'core/list', 'core/html', '
 
             // The Query
             $query = new WP_Query($args);
-            $selskaber = $query->posts;
+            $ejendomme = $query->posts;
 
-            foreach ($selskaber as $selskab) : ?>
+            foreach ($ejendomme as $ejendom) : ?>
 
-                <? $branche = get_field('cpt_selskab_branche', $selskab->ID) ?>
-                <? $selskab_url = get_post_field('post_name', $selskab->ID) ?>
+                <? $address = get_field('cpt_ejendom_address', $ejendom->ID) ?>
+                <? $zip = get_field('cpt_ejendom_zip', $ejendom->ID) ?>
+                <? $city= get_field('cpt_ejendom_city', $ejendom->ID) ?>
+                <? $ejendom_url = get_post_field('post_name', $ejendom->ID) ?>
 
-                <div class="col-12 col-md-6 col-xl-4 selskab-item">
-                    <a href="<?= $selskab_url ?>">
+                <div class="col-12 col-md-6 col-xl-4 ejendom-item">
+                    <a href="<?= $ejendom_url ?>">
                         <figure class="image-figure">
-                            <?= get_the_post_thumbnail($selskab->ID, 'full'); ?>
+                            <?= get_the_post_thumbnail($ejendom->ID, 'full'); ?>
                         </figure>
                         <div class="selskab-title-container">
-                            <p class="selskab-branche h5"><?= $branche ?></p>
-                            <h3 class="h5 selskab-title"><?= get_the_title($selskab->ID) ?></h3>
+                            <p class="ejendom-adresse"><?= $address ?></p>
+                            <p class="ejendom-by"><?= $zip ?> <?= $city ?></p>
                         </div>
                     </a>
                 </div>

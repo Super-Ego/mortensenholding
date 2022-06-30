@@ -167,6 +167,11 @@
                     "slug": "body-small",
                     "size": "15px",
                     "name": "Lille"
+                },
+                {
+                    "slug": "body-quote",
+                    "size": "24px",
+                    "name": "Citat"
                 }
             ]
         },

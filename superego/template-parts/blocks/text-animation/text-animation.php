@@ -1,7 +1,7 @@
 <?
 
 /**
- * Standard Text & Image Block
+ * Text & Animation Block
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -10,7 +10,7 @@
  */
 
 // Define block name
-$blockName = 'text-image';
+$blockName = 'text-animation';
 
 // Create id attribute
 $id = $blockName . '-' . $block['id'];
@@ -36,25 +36,19 @@ $template = [
     ['core/buttons', []]
 ];
 
-// Image settings
-$imgId = get_field('billede');
-$imgSize = 'full';
-$imgAttr = [];
 ?>
 
-<!-- Text & Image Block -->
+<!-- Text & Animation Block -->
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($className); ?>">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 d-flex align-items-center">
                 <div class="gutenberg-content">
                     <InnerBlocks allowedBlocks="<?= esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?= esc_attr(wp_json_encode($template)); ?>" />
                 </div>
             </div>
-            <div class="col-lg-6">
-                <figure class="image-figure">
-                    <?= wp_get_attachment_image($imgId, $imgSize, false, $imgAttr); ?>
-                </figure>
+            <div class="col-lg-6 d-flex justify-content-center animation-container">
+                <?= svg_image('invest_figure') ?>
             </div>
         </div>
     </div>

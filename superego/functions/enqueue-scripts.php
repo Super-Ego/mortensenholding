@@ -6,6 +6,7 @@ function site_scripts()
 
   // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   global $wp_styles;
+//global $detect;
 
   /* STYLESHEETS */
 
@@ -34,13 +35,13 @@ function site_scripts()
 
   // Register GSAP JS  (CDN)
   wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js', ['jquery'], null, true);
-
+  
   // Register GSAP JS SrollTrigger  (CDN)
   wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js', ['jquery', 'gsap'], null, true);
-
+  
   // Register GSAP JS
   wp_enqueue_script('gsap-client', THEME . '/assets/scripts/gsap.js', ['jquery'], filemtime(DIR . '/assets/scripts/gsap.js'), true);
-
+  
   // Register Simple Parallax JS (CDN)
   //wp_enqueue_script('simple-parallax-js', '//cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js', ['jquery'], null, false);
 
@@ -51,7 +52,7 @@ function site_scripts()
   //wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', ['jquery'], null, false);
 
   // Register Isotope JS (CDN)
-  //wp_enqueue_script('isotope-js', 'https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js', ['jquery'], null, false);
+  wp_enqueue_script('isotope-js', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', ['jquery'], null, false);
 
   // Register Formidable JS (Enable on pages / blocks with Formidable forms)
   //wp_enqueue_script('formidable-js', THEME . '/assets/scripts/formidable.js', ['jquery'], filemtime(DIR . '/assets/scripts/formidable.js'), false);
@@ -81,6 +82,12 @@ function site_scripts()
   if (is_user_logged_in()) :
     wp_enqueue_style('logged-in', THEME . '/assets/styles/css/logged-in.css', [], filemtime(DIR . '/assets/styles/css/logged-in.css'), 'all');
   endif;
+
+  // if ($detect->isMobile()) :
+  //   wp_enqueue_style('header-mobile', THEME . '/assets/styles/css/header-mobile.css', [], filemtime(DIR . '/assets/styles/css/main.css'), 'all');
+  // else:
+  //   wp_enqueue_style('header-desktop', THEME . '/assets/styles/css/header-desktop.css', [], filemtime(DIR . '/assets/styles/css/main.css'), 'all');
+  // endif;
 }
 add_action('wp_enqueue_scripts', 'site_scripts', 999);
 

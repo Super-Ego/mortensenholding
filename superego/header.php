@@ -56,18 +56,18 @@ Telefon: +45 78 70 29 29 - Email: horsens@superego.nu
 	endif; ?>
 
 	<div id="wrapper" class="wrapper">
-		<header id="main-header" class="header" role="banner" aria-label="Site header">
 
+		<? if ($detect->isMobile() && !$detect->isTablet()) : ?>
 			<!-- Mobile menu -->
-			<? if ($detect->isMobile()) : ?>
-				<div class="container">
+			<header id="main-header" class="header" role="banner" aria-label="Site header">
+				<div class="container-fluid">
 					<div class="row">
-						<div class="col-8 d-flex justify-content-start align-items-center p-0">
+						<div class="col-8 d-flex justify-content-start align-items-center">
 							<a id="site-logo" href="<?= get_home_url(); ?>" title="<? wp_title(); ?>">
 								<?= svg_image('logo_full') ?>
 							</a>
 						</div>
-						<div class="col-4 p-0">
+						<div class="col-4">
 							<div id="menu-toggle-mobile" class="d-flex justify-content-end align-items-center">
 								<div id="toggle-mobile" class="not-active">
 									<div class="inner">
@@ -110,9 +110,11 @@ Telefon: +45 78 70 29 29 - Email: horsens@superego.nu
 						<?= svg_image('menu_fig_mobile'); ?>
 					</div>
 				</div>
+			</header>
 
-				<!-- Desktop menu -->
-			<? else : ?>
+		<? else : ?>
+			<!-- Desktop menu -->
+			<header id="main-header" class="header" role="banner" aria-label="Site header">
 				<div class="container">
 					<div class="row">
 
@@ -168,12 +170,18 @@ Telefon: +45 78 70 29 29 - Email: horsens@superego.nu
 					<nav>
 						<? superego_top_nav('main-nav'); ?>
 					</nav>
-
-					<div id="menufig-container">
-						<?= svg_image('menu_fig'); ?>
-					</div>
+					<? if ($detect->isTablet()) : ?>
+						<div id="menufig-container" class="tablet">
+							<?= svg_image('menu_fig_mobile'); ?>
+						</div>
+					<? else : ?>
+						<div id="menufig-container">
+							<?= svg_image('menu_fig'); ?>
+						</div>
+					<? endif; ?>
 				</div>
-			<? endif; ?>
-		</header>
+				<div class="nav-overlay"></div>
+			</header>
+		<? endif; ?>
 
 		<!-- end #main-header -->

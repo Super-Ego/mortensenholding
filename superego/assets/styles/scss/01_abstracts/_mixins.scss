@@ -24,6 +24,24 @@
   }
 }
 
+// Media portrait query mixin
+@mixin mq-portrait($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (min-width: $size ) and (orientation: portrait) {
+    @content;
+  }
+}
+
+// Media landscape query mixin
+@mixin mq-landscape($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (min-width: $size ) and (orientation: landscape) {
+    @content;
+  }
+}
+
 // Standard button mixin
 @mixin Button {
   position: relative;
@@ -59,6 +77,21 @@
   &:active {
     transform: translateY(3px);
     background-color: var(--wp--preset--color--accent-l);
+  }
+}
+
+// Dark button mixin
+@mixin DarkButton {
+  background-color: var(--wp--preset--color--primary-b);
+  color: var(--wp--preset--color--light-b);
+
+  &:hover {
+    background-color: var(--wp--preset--color--primary-d);
+  }
+
+  &:active {
+    transform: translateY(3px);
+    background-color: var(--wp--preset--color--primary-l);
   }
 }
 

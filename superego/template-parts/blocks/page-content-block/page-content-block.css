@@ -1,0 +1,14 @@
+body section.page-content-block h1 {
+  margin-bottom: 5rem;
+}
+body section.page-content-block h1, body section.page-content-block h2, body section.page-content-block h3, body section.page-content-block h4, body section.page-content-block h5, body section.page-content-block h6 {
+  color: var(--wp--preset--color--dark-1);
+}
+body section.page-content-block p {
+  color: var(--wp--preset--color--dark-2);
+}
+body section.page-content-block .overlay-fig {
+  position: absolute;
+  bottom: -6px;
+  left: -2px;
+}
