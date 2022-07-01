@@ -1,0 +1,122 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the posttype: Ejendomme
+// -----------------------------------------------------------------------------
+
+@use "../01_abstracts/index" as *;
+
+body .property-available {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 920px;
+  height: 80px;
+  background-color: var(--wp--preset--color--accent-b);
+  z-index: 10;
+
+  .inner {
+    padding: 0 2.5rem;
+    height: 100%;
+
+    h5 {
+      margin-right: 1rem;
+    }
+
+    h5,
+    p,
+    a {
+      margin-bottom: 0;
+      color: var(--wp--preset--color--light-b);
+    }
+
+    a {
+      @include LinkHover;
+
+      &::after {
+        background-color: var(--wp--preset--color--light-b);
+      }
+
+      &:hover {
+        &::after {
+          background-color: var(--wp--preset--color--light-b);
+        }
+      }
+    }
+
+    .close {
+      position: absolute;
+      right: 2.5rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      width: 40%;
+      justify-content: end;
+      cursor: pointer;
+    }
+  }
+}
+
+body #flag-container {
+  height: 80px;
+  width: 80px;
+  background-color: var(--wp--preset--color--accent-b);
+  position: fixed;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+
+  &.zindex11 {
+    z-index: 11;
+  }
+
+  .open {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+}
+
+body section#single-ejendom-banner {
+  .ejendomSwiper {
+    position: relative;
+
+    .swiper-pagination {
+      bottom: 2rem;
+      left: 3rem;
+      width: auto;
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 5rem;
+      width: 10rem;
+      background-color: var(--wp--preset--color--light-b);
+
+      .button-left,
+      .button-right {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: var(--se--transition);
+
+        svg {
+          transition: var(--se--transition);
+        }
+
+        &:hover {
+          background-color: var(--wp--preset--color--accent-b);
+
+          svg {
+            path {
+              stroke: var(--wp--preset--color--light-b);
+            }
+          }
+        }
+      }
+    }
+  }
+}

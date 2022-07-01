@@ -6,34 +6,34 @@ section.selskaber-block .container {
     margin-bottom: 4rem;
   }
 }
-section.selskaber-block .selskaber-grid {
+section.selskaber-block .isotope-grid {
   --bs-gutter-y: 3rem;
 }
 @media only screen and (min-width: 992px) {
-  section.selskaber-block .selskaber-grid {
+  section.selskaber-block .isotope-grid {
     --bs-gutter-x: 5rem;
     --bs-gutter-y: 7rem;
   }
 }
-section.selskaber-block .selskaber-grid .selskab-item a {
+section.selskaber-block .isotope-grid .grid-item a {
   -webkit-transition: var(--se--transition);
   transition: var(--se--transition);
 }
-section.selskaber-block .selskaber-grid .selskab-item a:hover .image-figure {
+section.selskaber-block .isotope-grid .grid-item a:hover .image-figure {
   background: var(--wp--preset--color--secondary-d-2);
 }
-section.selskaber-block .selskaber-grid .selskab-item a:hover .image-figure::after {
+section.selskaber-block .isotope-grid .grid-item a:hover .image-figure::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transform-origin: left;
           transform-origin: left;
 }
 @media only screen and (min-width: 992px) {
-  section.selskaber-block .selskaber-grid .selskab-item:nth-of-type(2) {
+  section.selskaber-block .isotope-grid .grid-item:nth-of-type(2) {
     margin-top: calc(var(--bs-gutter-y) * 2);
   }
 }
-section.selskaber-block .selskaber-grid .selskab-item .image-figure {
+section.selskaber-block .isotope-grid .grid-item .image-figure {
   -webkit-transition: var(--se--transition);
   transition: var(--se--transition);
   background: var(--wp--preset--color--secondary-l-2);
@@ -49,32 +49,32 @@ section.selskaber-block .selskaber-grid .selskab-item .image-figure {
   position: relative;
 }
 @media only screen and (min-width: 576px) {
-  section.selskaber-block .selskaber-grid .selskab-item .image-figure {
+  section.selskaber-block .isotope-grid .grid-item .image-figure {
     height: 250px;
     padding: 0 10rem;
   }
 }
 @media only screen and (min-width: 768px) {
-  section.selskaber-block .selskaber-grid .selskab-item .image-figure {
+  section.selskaber-block .isotope-grid .grid-item .image-figure {
     padding: 0 4rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  section.selskaber-block .selskaber-grid .selskab-item .image-figure {
+  section.selskaber-block .isotope-grid .grid-item .image-figure {
     padding: 0 6rem;
   }
 }
 @media only screen and (min-width: 1200px) {
-  section.selskaber-block .selskaber-grid .selskab-item .image-figure {
+  section.selskaber-block .isotope-grid .grid-item .image-figure {
     padding: 0 4rem;
   }
 }
 @media only screen and (min-width: 1400px) {
-  section.selskaber-block .selskaber-grid .selskab-item .image-figure {
+  section.selskaber-block .isotope-grid .grid-item .image-figure {
     padding: 0 5rem;
   }
 }
-section.selskaber-block .selskaber-grid .selskab-item .image-figure::after {
+section.selskaber-block .isotope-grid .grid-item .image-figure::after {
   content: "";
   width: 90%;
   height: 8px;
@@ -91,13 +91,13 @@ section.selskaber-block .selskaber-grid .selskab-item .image-figure::after {
   -webkit-transform-origin: left;
           transform-origin: left;
 }
-section.selskaber-block .selskaber-grid .selskab-item .selskab-title-container .selskab-branche {
+section.selskaber-block .isotope-grid .grid-item .selskab-title-container .selskab-branche {
   color: var(--wp--preset--color--dark-2);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: 400;
 }
-section.selskaber-block .selskaber-grid .selskab-item .selskab-title-container .selskab-title {
+section.selskaber-block .isotope-grid .grid-item .selskab-title-container .selskab-title {
   color: var(--wp--preset--color--dark-1);
   margin-bottom: 0;
 }

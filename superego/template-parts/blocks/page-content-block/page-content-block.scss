@@ -5,22 +5,44 @@
 @use "../../../assets/styles/scss/01_abstracts/mixins" as *;
 
 body section.page-content-block {
+  h1 {
+    margin-bottom: 5rem;
+  }
 
-    h1 {
-        margin-bottom: 5rem;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--wp--preset--color--dark-1);
+  }
 
-    h1, h2, h3, h4, h5, h6 {
-        color: var(--wp--preset--color--dark-1);
+  p {
+    color: var(--wp--preset--color--dark-2);
+  }
+
+  .gutenberg-content {
+    figure {
+      margin-bottom: 0;
     }
-    
+  }
+
+  .overlay-fig {
+    position: absolute;
+    bottom: -6px;
+    left: -2px;
+  }
+
+  .ejendom-info {
     p {
-        color: var(--wp--preset--color--dark-2);
-    }
+      &:not(:last-of-type) {
+        margin-bottom: 3.5rem;
+      }
 
-    .overlay-fig {
-        position: absolute;
-        bottom: -6px;
-        left: -2px;
+      &.caption {
+        margin-bottom: 0.5rem;
+      }
     }
+  }
 }

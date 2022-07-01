@@ -1,23 +1,29 @@
 section.staggered-columns-block .container {
   width: auto;
 }
-section.staggered-columns-block .kolonner-grid {
+section.staggered-columns-block .isotope-grid {
   --bs-gutter-x: 5.25rem;
 }
-section.staggered-columns-block .kolonner-grid .kolonne-item:nth-of-type(even) {
+section.staggered-columns-block .isotope-grid .grid-item:nth-of-type(2) {
   margin-top: var(--se--section-padding);
 }
 @media only screen and (min-width: 992px) {
-  section.staggered-columns-block .kolonner-grid .kolonne-item:nth-of-type(even) {
+  section.staggered-columns-block .isotope-grid .grid-item:nth-of-type(2) {
     margin-top: calc(var(--bs-gutter-x) * 2.5);
   }
 }
-section.staggered-columns-block .kolonner-grid .kolonne-item .image-figure {
+section.staggered-columns-block .isotope-grid .grid-item .image-figure {
   margin: 0 0 2rem;
 }
-section.staggered-columns-block .kolonner-grid .kolonne-item p {
+section.staggered-columns-block .isotope-grid .grid-item p {
   margin-bottom: 2rem;
 }
-section.staggered-columns-block .kolonner-grid .kolonne-item h1, section.staggered-columns-block .kolonner-grid .kolonne-item h2, section.staggered-columns-block .kolonner-grid .kolonne-item h3, section.staggered-columns-block .kolonner-grid .kolonne-item h4, section.staggered-columns-block .kolonner-grid .kolonne-item h5, section.staggered-columns-block .kolonner-grid .kolonne-item h6, section.staggered-columns-block .kolonner-grid .kolonne-item p {
+section.staggered-columns-block .isotope-grid .grid-item h1,
+section.staggered-columns-block .isotope-grid .grid-item h2,
+section.staggered-columns-block .isotope-grid .grid-item h3,
+section.staggered-columns-block .isotope-grid .grid-item h4,
+section.staggered-columns-block .isotope-grid .grid-item h5,
+section.staggered-columns-block .isotope-grid .grid-item h6,
+section.staggered-columns-block .isotope-grid .grid-item p {
   color: var(--wp--preset--color--dark-1);
 }

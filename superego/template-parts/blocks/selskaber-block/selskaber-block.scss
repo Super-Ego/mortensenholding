@@ -17,7 +17,7 @@ section.selskaber-block {
     }
   }
 
-  .selskaber-grid {
+  .isotope-grid {
     --bs-gutter-y: 3rem;
 
     @include mq(lg) {
@@ -25,7 +25,7 @@ section.selskaber-block {
       --bs-gutter-y: 7rem;
     }
 
-    .selskab-item {
+    .grid-item {
       a {
         transition: var(--se--transition);
 
@@ -40,13 +40,13 @@ section.selskaber-block {
           }
         }
       }
-      
+
       &:nth-of-type(2) {
         @include mq(lg) {
           margin-top: calc(var(--bs-gutter-y) * 2);
         }
       }
-      
+
       .image-figure {
         transition: var(--se--transition);
         background: var(--wp--preset--color--secondary-l-2);
@@ -96,8 +96,8 @@ section.selskaber-block {
       .selskab-title-container {
         .selskab-branche {
           color: var(--wp--preset--color--dark-2);
-          margin-top: 2rem;
-          margin-bottom: 1rem;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
           font-weight: 400;
         }
 

@@ -75,7 +75,7 @@ body .strong {
   line-height: 28px;
 }
 
-// Small styling 
+// Small styling
 body .body-small {
   font-size: 15px;
 }
@@ -84,9 +84,12 @@ body .body-small {
 .caption {
   font-size: 12px;
   font-family: var(--se--heading-font);
-  margin-bottom: 0.5rem;
-  display: flex;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  //display: flex;
   color: var(--wp--preset--color--dark-1);
+  text-transform: uppercase;
+  font-weight: var(--wp--custom--font-weight--extra-bold);
 
   &.overline {
     text-transform: uppercase;

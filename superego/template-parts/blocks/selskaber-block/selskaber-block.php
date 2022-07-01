@@ -26,6 +26,11 @@ $allowed_blocks = ['core/heading', 'core/paragraph', 'core/list', 'core/html', '
 
 // Custom fields
 
+
+// Register Isotope JS (CDN)
+wp_enqueue_script('isotope-js', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', ['jquery'], null, false);
+// Register Isotope
+wp_enqueue_script('isotope-js-call', THEME . '/assets/scripts/isotope.js', array('jquery'), false, false);
 ?>
 
 <section id="<? echo esc_attr($id); ?>" class="<? echo esc_attr($className); ?>">
@@ -36,7 +41,7 @@ $allowed_blocks = ['core/heading', 'core/paragraph', 'core/list', 'core/html', '
             </div>
         </div>
 
-        <div class="selskaber-grid row">
+        <div class="isotope-grid row">
             <?
             // WP_Query arguments
             $args = array(
@@ -55,7 +60,7 @@ $allowed_blocks = ['core/heading', 'core/paragraph', 'core/list', 'core/html', '
                 <? $branche = get_field('cpt_selskab_branche', $selskab->ID) ?>
                 <? $selskab_url = get_post_field('post_name', $selskab->ID) ?>
 
-                <div class="col-12 col-md-6 col-xl-4 selskab-item">
+                <div class="col-12 col-md-6 col-xl-4 grid-item">
                     <a href="<?= $selskab_url ?>">
                         <figure class="image-figure">
                             <?= get_the_post_thumbnail($selskab->ID, 'full'); ?>

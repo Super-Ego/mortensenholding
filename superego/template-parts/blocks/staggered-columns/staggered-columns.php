@@ -27,11 +27,15 @@ $allowed_blocks = ['core/heading', 'core/paragraph', 'core/list', 'core/html', '
 // Custom fields
 $kolonner = get_field('forskudte_kolonner_repeater');
 
+// Register Isotope JS (CDN)
+wp_enqueue_script('isotope-js', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', ['jquery'], null, false);
+// Register Isotope
+wp_enqueue_script('isotope-js-call', THEME . '/assets/scripts/isotope.js', array('jquery'), false, false);
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($className); ?>">
     <div class="container">
-        <div class="row kolonner-grid">
+        <div class="row isotope-grid">
             <? foreach ($kolonner as $kolonne) : ?>
                 <?
                 $kolonne_billede = $kolonne['kolonne_billede'];
@@ -40,7 +44,7 @@ $kolonner = get_field('forskudte_kolonner_repeater');
                 $kolonne_knap_tekst = $kolonne['kolonne_knap_tekst'];
                 $kolonne_knap_link = $kolonne['kolonne_knap_link'];
                 ?>
-                <div class="col-12 col-lg-6 kolonne-item">
+                <div class="col-12 col-lg-6 grid-item">
                     <figure class="image-figure">
                         <?= wp_get_attachment_image($kolonne_billede, 'full', false); ?>
                     </figure>

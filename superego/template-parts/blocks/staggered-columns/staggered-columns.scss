@@ -9,11 +9,11 @@ section.staggered-columns-block {
     width: auto;
   }
 
-  .kolonner-grid {
+  .isotope-grid {
     --bs-gutter-x: 5.25rem;
 
-    .kolonne-item {
-      &:nth-of-type(even) {
+    .grid-item {
+      &:nth-of-type(2) {
         margin-top: var(--se--section-padding);
 
         @include mq(lg) {
@@ -28,8 +28,14 @@ section.staggered-columns-block {
       p {
         margin-bottom: 2rem;
       }
-      
-      h1, h2, h3, h4, h5, h6, p {
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
         color: var(--wp--preset--color--dark-1);
       }
     }

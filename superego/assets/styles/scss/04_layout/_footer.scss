@@ -12,18 +12,23 @@ body footer#footer {
   @include mq(lg) {
     max-height: 1040px;
   }
-  
+
   .container-fluid {
     padding: 0;
+
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
-  
+
   .image-container {
     padding: 0;
 
     @include mq-max(lg) {
       max-height: 35vh;
     }
-    
+
     h3 {
       color: var(--wp--preset--color--light-b);
       letter-spacing: 5px;
@@ -42,16 +47,15 @@ body footer#footer {
       @include mq(md) {
         transform: translate(-50%, -100%);
       }
-      
+
       @include mq(lg) {
         top: 50%;
         left: 25%;
         transform: translate(-50%, -50%);
       }
     }
-    
-    .image-figure {
 
+    .image-figure {
       @include mq-max(lg) {
         height: 100%;
 
@@ -77,7 +81,7 @@ body footer#footer {
       }
     }
   }
-  
+
   .info-container {
     color: var(--wp--preset--color--light-b);
     z-index: 9;
@@ -91,7 +95,7 @@ body footer#footer {
 
     .footer-logo {
       margin-bottom: 3rem;
-      
+
       @include mq(lg) {
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -102,7 +106,7 @@ body footer#footer {
         margin-bottom: 3rem;
         padding: 0;
       }
-      
+
       @include mq(xxl) {
         // margin-top: 11.5%;
         margin-bottom: 5rem;
@@ -117,7 +121,7 @@ body footer#footer {
         margin-bottom: 2rem;
       }
     }
-    
+
     .footer-link {
       color: var(--wp--preset--color--light-b);
       @include LinkHover;
@@ -126,7 +130,6 @@ body footer#footer {
     #copyright {
       margin-top: 3rem;
       margin-bottom: 0;
-  
     }
 
     #bgfig-container {

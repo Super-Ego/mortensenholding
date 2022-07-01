@@ -11,6 +11,7 @@ const fadeInAnimation = gsap.utils.toArray("[data-animation='fade-in']");
 const fadeUpAnimation = gsap.utils.toArray("[data-animation='fade-up']");
 const menuTimeline = gsap.timeline({ paused: true });
 const menuTimelineMobile = gsap.timeline({ paused: true });
+const availableTimeLine = gsap.timeline({ paused: true });
 
 // Custom GSAP function
 function customGSAP(array, start, options) {
@@ -181,5 +182,40 @@ jQuery(document).ready(function ($) {
     start: "top -80",
     end: 99999,
     toggleClass: { className: "logo-text--scrolled", targets: ".logo-text" },
+  });
+
+  // Animation for property availability
+  availableTimeLine.to("#available", {
+    duration: 1,
+    ease: "expo2.out",
+    right: -920,
+  });
+
+  availableTimeLine.from(
+    "#flag-container",
+    {
+      duration: 1,
+      ease: "power2.out",
+      right: -80,
+    },
+    "-=0.1"
+  );
+
+  $("#closeAvailable").click(function () {
+    if (!$("#available").hasClass("outOfBounds")) {
+      availableTimeLine.play();
+    }
+
+    $("#available").addClass("outOfBounds");
+    $("#flag-container").addClass("zindex11");
+  });
+
+  $("#flag-container").click(function () {
+    if ($("#available").hasClass("outOfBounds")) {
+      availableTimeLine.reverse();
+    }
+
+    $("#available").removeClass("outOfBounds");
+    $("#flag-container").removeClass("zindex11");
   });
 });

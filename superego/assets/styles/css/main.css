@@ -767,11 +767,11 @@ body .body-small {
 .caption {
   font-size: 12px;
   font-family: var(--se--heading-font);
-  margin-bottom: 0.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
   color: var(--wp--preset--color--dark-1);
+  text-transform: uppercase;
+  font-weight: var(--wp--custom--font-weight--extra-bold);
 }
 .caption.overline {
   text-transform: uppercase;
@@ -1528,6 +1528,10 @@ body footer#footer {
 body footer#footer .container-fluid {
   padding: 0;
 }
+body footer#footer .container-fluid .row {
+  margin-left: 0;
+  margin-right: 0;
+}
 body footer#footer .image-container {
   padding: 0;
 }
@@ -2063,6 +2067,143 @@ section#page-banner .with-overlay .inner .image-figure {
 section#page-banner .with-overlay .inner .image-figure img {
   width: 75%;
   margin-left: auto;
+}
+
+body .property-available {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 920px;
+  height: 80px;
+  background-color: var(--wp--preset--color--accent-b);
+  z-index: 10;
+}
+body .property-available .inner {
+  padding: 0 2.5rem;
+  height: 100%;
+}
+body .property-available .inner h5 {
+  margin-right: 1rem;
+}
+body .property-available .inner h5,
+body .property-available .inner p,
+body .property-available .inner a {
+  margin-bottom: 0;
+  color: var(--wp--preset--color--light-b);
+}
+body .property-available .inner a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--wp--preset--color--accent-b);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform var(--se--transition);
+  transition: -webkit-transform var(--se--transition);
+  transition: transform var(--se--transition);
+  transition: transform var(--se--transition), -webkit-transform var(--se--transition);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+body .property-available .inner a:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+body .property-available .inner a::after {
+  background-color: var(--wp--preset--color--light-b);
+}
+body .property-available .inner a:hover::after {
+  background-color: var(--wp--preset--color--light-b);
+}
+body .property-available .inner .close {
+  position: absolute;
+  right: 2.5rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  cursor: pointer;
+}
+
+body #flag-container {
+  height: 80px;
+  width: 80px;
+  background-color: var(--wp--preset--color--accent-b);
+  position: fixed;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+body #flag-container.zindex11 {
+  z-index: 11;
+}
+body #flag-container .open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body section#single-ejendom-banner .ejendomSwiper {
+  position: relative;
+}
+body section#single-ejendom-banner .ejendomSwiper .swiper-pagination {
+  bottom: 2rem;
+  left: 3rem;
+  width: auto;
+}
+body section#single-ejendom-banner .ejendomSwiper .buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 5rem;
+  width: 10rem;
+  background-color: var(--wp--preset--color--light-b);
+}
+body section#single-ejendom-banner .ejendomSwiper .buttons .button-left,
+body section#single-ejendom-banner .ejendomSwiper .buttons .button-right {
+  height: 100%;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: var(--se--transition);
+  transition: var(--se--transition);
+}
+body section#single-ejendom-banner .ejendomSwiper .buttons .button-left svg,
+body section#single-ejendom-banner .ejendomSwiper .buttons .button-right svg {
+  -webkit-transition: var(--se--transition);
+  transition: var(--se--transition);
+}
+body section#single-ejendom-banner .ejendomSwiper .buttons .button-left:hover,
+body section#single-ejendom-banner .ejendomSwiper .buttons .button-right:hover {
+  background-color: var(--wp--preset--color--accent-b);
+}
+body section#single-ejendom-banner .ejendomSwiper .buttons .button-left:hover svg path,
+body section#single-ejendom-banner .ejendomSwiper .buttons .button-right:hover svg path {
+  stroke: var(--wp--preset--color--light-b);
 }
 
 :where(.wp-block-group.has-background) {

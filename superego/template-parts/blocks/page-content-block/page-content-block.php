@@ -32,6 +32,8 @@ $page_content_heading = get_field('page_content_heading');
 $page_content_button = get_field('page_content_button');
 $page_content_figure = get_field('page_content_figure');
 
+// Get post type
+$what_post_type = get_post_type($post_id);
 ?>
 
 <!-- Page content Block -->
@@ -44,6 +46,37 @@ $page_content_figure = get_field('page_content_figure');
             <? if (!$detect->isMobile() && $page_content_button) : ?>
                 <div class="col-md-2 col-lg-4">
                     <a href="<?= $page_content_button['url']; ?>" class="btn"><?= $page_content_button['title']; ?></a>
+                </div>
+                <div class="col-12 col-md-10 col-lg-8 gutenberg-content">
+                    <InnerBlocks allowedBlocks="<?= esc_attr(wp_json_encode($allowed_blocks)); ?>" />
+                </div>
+            <? elseif ($what_post_type == 'ejendom') : ?>
+                <?
+                $type_term = get_the_terms($ejendom, 'mortensen_type');
+                $type = $type_term[0]->name;
+
+                $page_content_property_address = get_field('page_content_property_address');
+                $page_content_property_rent = get_field('page_content_property_rent');
+                $page_content_property_size = get_field('page_content_property_size');
+                ?>
+                <div class="col-md-2 col-lg-4 ejendom-info">
+                    <p class="caption">Type</p>
+                    <p><?= $type ?></p>
+
+                    <? if ($page_content_property_address) : ?>
+                        <p class="caption">Beliggenhed</p>
+                        <p><?= $page_content_property_address ?></p>
+                    <? endif; ?>
+
+                    <? if ($page_content_property_rent) : ?>
+                        <p class="caption">Leje</p>
+                        <p><?= $page_content_property_rent ?></p>
+                    <? endif; ?>
+
+                    <? if ($page_content_property_size) : ?>
+                        <p class="caption">Størrelse</p>
+                        <p><?= $page_content_property_size ?></p>
+                    <? endif; ?>
                 </div>
                 <div class="col-12 col-md-10 col-lg-8 gutenberg-content">
                     <InnerBlocks allowedBlocks="<?= esc_attr(wp_json_encode($allowed_blocks)); ?>" />
