@@ -37,7 +37,7 @@ body.home {
             color: var(--wp--preset--color--light-b);
             margin-bottom: 1.5rem;
           }
-          
+
           p {
             color: var(--wp--preset--color--light-b);
             margin-bottom: 2rem;
@@ -68,7 +68,7 @@ body.home {
             @include mq(desktop) {
               width: 100%;
             }
-            
+
             @include mq(qhd) {
               height: auto;
               width: auto;

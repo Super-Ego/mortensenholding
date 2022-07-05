@@ -41,6 +41,12 @@ function site_scripts()
 
   // Register GSAP JS
   wp_enqueue_script('gsap-client', THEME . '/assets/scripts/gsap.js', ['jquery'], filemtime(DIR . '/assets/scripts/gsap.js'), true);
+  
+  // Register Bodymovin JS
+  // wp_enqueue_script('bodymovin', 'https://cdnjs.com/libraries/bodymovin', ['jquery'], null, true);
+    
+  // Register Lottie JS
+  wp_enqueue_script('lottie', 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', ['jquery'], null, true);
 
   // Register Simple Parallax JS (CDN)
   //wp_enqueue_script('simple-parallax-js', '//cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js', ['jquery'], null, false);

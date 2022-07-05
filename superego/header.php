@@ -55,6 +55,13 @@ Telefon: +45 78 70 29 29 - Email: horsens@superego.nu
 		echo $code_body;
 	endif; ?>
 
+	<!-- Page loader -->
+	<div id="loadingContainer">
+		<div class="lottie-container">
+			<lottie-player src="/wp-content/themes/superego/assets/json/MM_SPLASH_ANIMATION.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"    autoplay></lottie-player>
+		</div>
+	</div>
+
 	<div id="wrapper" class="wrapper">
 
 		<? if ($detect->isMobile() && !$detect->isTablet()) : ?>

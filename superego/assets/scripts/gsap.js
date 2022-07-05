@@ -12,6 +12,7 @@ const fadeUpAnimation = gsap.utils.toArray("[data-animation='fade-up']");
 const menuTimeline = gsap.timeline({ paused: true });
 const menuTimelineMobile = gsap.timeline({ paused: true });
 const availableTimeLine = gsap.timeline({ paused: true });
+const pageLoadTimeline = gsap.timeline({ paused: true });
 
 // Custom GSAP function
 function customGSAP(array, start, options) {
@@ -45,6 +46,29 @@ jQuery(document).ready(function ($) {
     opacity: 1,
     y: 0,
   });
+
+  // Page load container
+  pageLoadTimeline.to("#loadingContainer", {
+    x: "-100%",
+    ease: Sine.easeInOut,
+    delay: "3.6",
+  });
+
+  // Replace sessionStorage with localStorage in production
+  let pageLoaderSeen = sessionStorage.getItem("pageLoaderSeen");
+
+  if (!pageLoaderSeen) {
+    $("#loadingContainer").addClass("unseen");
+    $("html").addClass("no-scroll");
+    pageLoadTimeline.play();
+    sessionStorage.setItem("pageLoaderSeen", true);
+    setTimeout(function () {
+      $("html").removeClass("no-scroll");
+    }, 3800);
+    setTimeout(function () {
+      $("#loadingContainer").removeClass("unseen");
+    }, 4500);
+  }
 
   // Menu animation desktop
   menuTimeline.to("#main-navigation", {

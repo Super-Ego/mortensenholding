@@ -1,0 +1,19 @@
+body #loadingContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--wp--preset--color--accent-b);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: none;
+
+  &.unseen {
+    display: block;
+  }
+
+  .lottie-container {
+    width: 100%;
+    height: 100%;
+  }
+}
