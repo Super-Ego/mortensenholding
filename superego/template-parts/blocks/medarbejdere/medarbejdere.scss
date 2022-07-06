@@ -2,4 +2,86 @@
 // Standard employee Superego Block styling
 // -----------------------------------------------------------------------------
 
-@use '../../../assets/styles/scss/01_abstracts/mixins' as *;
+@use "../../../assets/styles/scss/01_abstracts/mixins" as *;
+
+section.medarbejdere-block {
+  .isotope-grid {
+    --bs-gutter-y: 3rem;
+
+    @include mq(lg) {
+      --bs-gutter-x: 5rem;
+      --bs-gutter-y: 7rem;
+    }
+
+    .grid-item {
+      a {
+        transition: var(--se--transition);
+
+        &:hover {
+          .image-figure {
+            background: var(--wp--preset--color--secondary-d-2);
+
+            &::after {
+              transform: scaleX(1);
+              transform-origin: left;
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        @include mq(lg) {
+          margin-top: calc(var(--bs-gutter-y) * 2);
+        }
+      }
+
+      .image-figure {
+        transition: var(--se--transition);
+        background: var(--wp--preset--color--secondary-l-2);
+        height: 350px;
+
+        @include mq(sm) {
+          height: 500px;
+        }
+
+        &::after {
+          content: "";
+          width: 90%;
+          height: 8px;
+          background: var(--wp--preset--color--accent-b);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transform: scaleX(0);
+          transition: transform var(--se--transition);
+          transform-origin: left;
+        }
+      }
+
+      .medarbejder__inner {
+        .medarbejder__navn {
+          color: var(--wp--preset--color--dark-1);
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          font-weight: var(--wp--custom--font-weight--extra-bold);
+        }
+
+        .medarbejder__stilling {
+          color: var(--wp--preset--color--dark-2);
+          margin-bottom: 1.5rem;
+        }
+
+        .medarbejder__kontakt {
+          color: var(--wp--preset--color--dark-2);
+          transition: var(--se--transition);
+          @include LinkHover;
+
+          span {
+            color: var(--wp--preset--color--dark-1);
+            font-weight: var(--wp--custom--font-weight--bold);
+          }
+        }
+      }
+    }
+  }
+}
