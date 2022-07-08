@@ -51,7 +51,7 @@ jQuery(document).ready(function ($) {
   pageLoadTimeline.to("#loadingContainer", {
     x: "-100%",
     ease: Sine.easeInOut,
-    delay: "3.6",
+    delay: "3.8",
   });
 
   // Replace sessionStorage with localStorage in production
