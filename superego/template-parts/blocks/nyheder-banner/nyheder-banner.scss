@@ -1,9 +1,5 @@
 // -----------------------------------------------------------------------------
-// Selskaber Block styling
+// Nyheder banner block styling
 // -----------------------------------------------------------------------------
 
 @use "../../../assets/styles/scss/01_abstracts/mixins" as *;
-
-section.selskaber-block {
-  @include Isotope;
-}

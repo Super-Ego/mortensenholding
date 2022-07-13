@@ -678,7 +678,12 @@ body::-webkit-scrollbar-thumb:hover {
 
 .wp-block-quote {
   border-left: 24px solid var(--wp--preset--color--secondary-d-2);
-  padding-left: 3rem;
+  padding-left: 2rem;
+}
+@media only screen and (min-width: 992px) {
+  .wp-block-quote {
+    padding-left: 3rem;
+  }
 }
 .wp-block-quote p {
   font-size: var(--wp--preset--font-size--body-quote);
@@ -786,6 +791,8 @@ body .body-small {
     --wp--preset--font-size--h-4: 1.125rem;
     --wp--preset--font-size--h-5: 1.125rem;
     --wp--preset--font-size--h-6: 1rem;
+    --wp--preset--font-size--body-regular: 1rem;
+    --wp--preset--font-size--body-quote: 1.25rem;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1029,7 +1036,7 @@ body .body-small {
   margin-top: 1rem;
 }
 
-.container,
+body .container,
 .container-lg,
 .container-md,
 .container-sm,
@@ -1038,10 +1045,11 @@ body .body-small {
   -webkit-transition: var(--se--transition);
   transition: var(--se--transition);
   max-width: var(--se--content-width);
+  width: auto;
   --bs-gutter-x: 1.5rem;
 }
 @media only screen and (min-width: 992px) {
-  .container,
+  body .container,
 .container-lg,
 .container-md,
 .container-sm,
@@ -1908,15 +1916,25 @@ body footer#footer .info-container #bgfig-container {
   background-color: var(--wp--preset--color--primary-l);
 }
 
+body.home #frontpage-banner {
+  height: calc(90vh - var(--se--header-height));
+  padding: 0;
+}
+@media only screen and (max-width: 992px) {
+  body.home #frontpage-banner {
+    background-color: var(--wp--preset--color--primary-b);
+  }
+}
 @media only screen and (min-width: 768px) {
   body.home #frontpage-banner {
     padding: 6rem 0;
+    height: 50vh;
   }
 }
 @media only screen and (min-width: 992px) {
   body.home #frontpage-banner {
-    padding: var(--se--section-padding) 0;
     height: 70vh;
+    padding: var(--se--section-padding) 0;
     width: calc(100% + 2px);
     left: -1px;
   }
@@ -1926,7 +1944,7 @@ body.home #frontpage-banner .wrapper {
   height: 100%;
 }
 body.home #frontpage-banner .wrapper .container {
-  height: 100%;
+  height: 55%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1939,6 +1957,17 @@ body.home #frontpage-banner .wrapper .container {
     width: auto;
   }
 }
+@media only screen and (max-width: 992px) {
+  body.home #frontpage-banner .wrapper .container {
+    position: absolute;
+    bottom: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body.home #frontpage-banner .wrapper .container {
+    height: 100%;
+  }
+}
 body.home #frontpage-banner .wrapper .container .banner-content {
   max-width: 600px;
 }
@@ -1949,6 +1978,14 @@ body.home #frontpage-banner .wrapper .container .banner-content h1 {
 body.home #frontpage-banner .wrapper .container .banner-content p {
   color: var(--wp--preset--color--light-b);
   margin-bottom: 2rem;
+}
+body.home #frontpage-banner .wrapper .background-image {
+  height: 45%;
+}
+@media only screen and (min-width: 992px) {
+  body.home #frontpage-banner .wrapper .background-image {
+    height: 100%;
+  }
 }
 body.home #frontpage-banner .wrapper .background-image .inner {
   width: 100%;
@@ -1986,43 +2023,53 @@ body.home #frontpage-banner .wrapper .background-image .inner .image-figure {
   height: 100%;
   background-color: var(--wp--preset--color--primary-b);
 }
-body.home #frontpage-banner .wrapper .background-image .inner .image-figure img {
-  width: 80%;
-  margin-left: auto;
+@media only screen and (min-width: 768px) {
+  body.home #frontpage-banner .wrapper .background-image .inner .image-figure img {
+    width: 65%;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body.home #frontpage-banner .wrapper .background-image .inner .image-figure img {
+    width: 80%;
+  }
 }
 
 section#page-banner {
-  height: calc(50vh + var(--se--section-padding));
-  max-height: calc(700px + var(--se--section-padding));
   padding: 0;
 }
+section#page-banner.page-banner-overlay {
+  height: calc(80vh - var(--se--header-height));
+  max-height: calc(700px + var(--se--section-padding));
+}
+@media only screen and (max-width: 992px) {
+  section#page-banner.page-banner-overlay {
+    background-color: var(--wp--preset--color--light-b);
+  }
+}
 @media only screen and (min-width: 1600px) {
-  section#page-banner {
+  section#page-banner.page-banner-overlay {
     height: calc(700px + var(--se--section-padding));
   }
 }
 @media only screen and (min-width: 2000px) {
-  section#page-banner {
+  section#page-banner.page-banner-overlay {
     height: calc(60vh + var(--se--section-padding));
     max-height: calc(800px + var(--se--section-padding));
   }
 }
-section#page-banner::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: var(--se--section-padding);
-  background-color: var(--wp--preset--color--light-b);
+@media only screen and (min-width: 992px) {
+  section#page-banner.page-banner-overlay::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--se--section-padding);
+    background-color: var(--wp--preset--color--light-b);
+  }
 }
-section#page-banner .background-image {
-  height: calc(100% - var(--se--section-padding));
-}
-section#page-banner .background-image .image-figure {
-  height: 100%;
-}
-section#page-banner .banner-figure {
+section#page-banner.page-banner-overlay .banner-figure {
   position: absolute;
   width: 24px;
   height: 160px;
@@ -2030,18 +2077,18 @@ section#page-banner .banner-figure {
   bottom: 2rem;
 }
 @media only screen and (min-width: 2000px) {
-  section#page-banner .banner-figure {
+  section#page-banner.page-banner-overlay .banner-figure {
     bottom: 4rem;
   }
 }
-section#page-banner .banner-figure.left {
+section#page-banner.page-banner-overlay .banner-figure.left {
   left: 5rem;
 }
-section#page-banner .banner-figure.right {
+section#page-banner.page-banner-overlay .banner-figure.right {
   right: 5rem;
 }
-section#page-banner .banner-overlay {
-  height: calc(100% - var(--se--section-padding));
+section#page-banner.page-banner-overlay .banner-overlay {
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2053,38 +2100,172 @@ section#page-banner .banner-overlay {
       -ms-flex-pack: center;
           justify-content: center;
 }
-section#page-banner .banner-overlay h1, section#page-banner .banner-overlay p {
-  color: var(--wp--preset--color--light-b);
+@media only screen and (max-width: 992px) {
+  section#page-banner.page-banner-overlay .banner-overlay {
+    position: absolute;
+    bottom: 0;
+  }
 }
-section#page-banner .banner-overlay p {
+@media only screen and (min-width: 992px) {
+  section#page-banner.page-banner-overlay .banner-overlay {
+    height: 100%;
+  }
+}
+section#page-banner.page-banner-overlay .banner-overlay h1 {
+  color: var(--wp--preset--color--dark-1);
+}
+@media only screen and (min-width: 992px) {
+  section#page-banner.page-banner-overlay .banner-overlay h1 {
+    color: var(--wp--preset--color--light-b);
+  }
+}
+section#page-banner.page-banner-overlay .banner-overlay p {
   max-width: 50ch;
+  color: var(--wp--preset--color--dark-2);
 }
-section#page-banner .with-overlay {
-  width: 100%;
-  height: calc(100% - var(--se--section-padding));
+@media only screen and (min-width: 992px) {
+  section#page-banner.page-banner-overlay .banner-overlay p {
+    color: var(--wp--preset--color--light-b);
+  }
 }
-section#page-banner .with-overlay .inner {
+section#page-banner.page-banner-overlay .background-image {
+  height: 50%;
+}
+@media only screen and (min-width: 992px) {
+  section#page-banner.page-banner-overlay .background-image {
+    height: calc(100% - var(--se--section-padding));
+  }
+}
+section#page-banner.page-banner-overlay .background-image .inner {
   width: 100%;
   height: 100%;
 }
-section#page-banner .with-overlay .inner svg {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: auto;
-  height: auto;
-}
-@media only screen and (min-width: 1921px) {
-  section#page-banner .with-overlay .inner svg {
-    width: 100%;
+@media only screen and (max-width: 992px) {
+  section#page-banner.page-banner-overlay .background-image .inner svg {
+    display: none;
   }
 }
-section#page-banner .with-overlay .inner .image-figure {
+@media only screen and (min-width: 992px) {
+  section#page-banner.page-banner-overlay .background-image .inner svg {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+  }
+}
+section#page-banner.page-banner-overlay .background-image .inner .image-figure {
+  height: 100%;
   background-color: var(--wp--preset--color--primary-b);
 }
-section#page-banner .with-overlay .inner .image-figure img {
-  width: 75%;
-  margin-left: auto;
+@media only screen and (min-width: 992px) {
+  section#page-banner.page-banner-overlay .background-image .inner .image-figure img {
+    width: 70%;
+    margin-left: auto;
+  }
+}
+section#page-banner.page-banner {
+  height: 50vh;
+  max-height: calc(700px + var(--se--section-padding));
+}
+@media only screen and (min-width: 1600px) {
+  section#page-banner.page-banner {
+    height: calc(700px + var(--se--section-padding));
+  }
+}
+@media only screen and (min-width: 2000px) {
+  section#page-banner.page-banner {
+    height: calc(60vh + var(--se--section-padding));
+    max-height: calc(800px + var(--se--section-padding));
+  }
+}
+section#page-banner.page-banner .background-image {
+  height: calc(100% - var(--se--section-padding));
+}
+section#page-banner.page-banner .background-image .image-figure {
+  height: 100%;
+}
+
+body section.relaterede-nyheder-block,
+body section.relaterede-ejendomme-block {
+  background-color: var(--wp--preset--color--secondary-b-2);
+}
+@media only screen and (max-width: 992px) {
+  body section.relaterede-nyheder-block .related-item:not(:last-of-type),
+body section.relaterede-ejendomme-block .related-item:not(:last-of-type) {
+    margin-bottom: 3rem;
+  }
+}
+body section.relaterede-nyheder-block .related-item a,
+body section.relaterede-ejendomme-block .related-item a {
+  -webkit-transition: var(--se--transition);
+  transition: var(--se--transition);
+}
+body section.relaterede-nyheder-block .related-item a:hover .image-figure::after,
+body section.relaterede-ejendomme-block .related-item a:hover .image-figure::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  z-index: 9;
+}
+body section.relaterede-nyheder-block .related-item .image-figure,
+body section.relaterede-ejendomme-block .related-item .image-figure {
+  -webkit-transition: var(--se--transition);
+  transition: var(--se--transition);
+  background: #d9d9d9;
+  height: 200px;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+@media only screen and (min-width: 576px) {
+  body section.relaterede-nyheder-block .related-item .image-figure,
+body section.relaterede-ejendomme-block .related-item .image-figure {
+    height: 250px;
+  }
+}
+body section.relaterede-nyheder-block .related-item .image-figure::after,
+body section.relaterede-ejendomme-block .related-item .image-figure::after {
+  content: "";
+  width: 90%;
+  height: 8px;
+  background: var(--wp--preset--color--accent-b);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform var(--se--transition);
+  transition: -webkit-transform var(--se--transition);
+  transition: transform var(--se--transition);
+  transition: transform var(--se--transition), -webkit-transform var(--se--transition);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  z-index: 9;
+}
+body section.relaterede-nyheder-block .related-item .captions .caption-1,
+body section.relaterede-ejendomme-block .related-item .captions .caption-1 {
+  color: var(--wp--preset--color--dark-2);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+body section.relaterede-nyheder-block .related-item .captions .caption-2,
+body section.relaterede-ejendomme-block .related-item .captions .caption-2 {
+  color: var(--wp--preset--color--dark-1);
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 992px) {
+  body .wp-block-spacer {
+    max-height: 2rem;
+  }
 }
 
 body .property-available {

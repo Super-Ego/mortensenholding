@@ -1,28 +1,28 @@
-section.selskaber-block .container {
+section.nyheder-block .container {
   width: auto;
 }
 @media only screen and (min-width: 992px) {
-  section.selskaber-block .content h2 {
+  section.nyheder-block .content h2 {
     margin-bottom: 4rem;
   }
 }
-section.selskaber-block .isotope-grid {
+section.nyheder-block .isotope-grid {
   --bs-gutter-y: 3rem;
 }
 @media only screen and (min-width: 992px) {
-  section.selskaber-block .isotope-grid {
+  section.nyheder-block .isotope-grid {
     --bs-gutter-x: 5rem;
     --bs-gutter-y: 7rem;
   }
 }
-section.selskaber-block .isotope-grid .grid-item a {
+section.nyheder-block .isotope-grid .grid-item a {
   -webkit-transition: var(--se--transition);
   transition: var(--se--transition);
 }
-section.selskaber-block .isotope-grid .grid-item a:hover .image-figure {
+section.nyheder-block .isotope-grid .grid-item a:hover .image-figure {
   background: var(--wp--preset--color--secondary-d-2);
 }
-section.selskaber-block .isotope-grid .grid-item a:hover .image-figure::after {
+section.nyheder-block .isotope-grid .grid-item a:hover .image-figure::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transform-origin: left;
@@ -30,11 +30,11 @@ section.selskaber-block .isotope-grid .grid-item a:hover .image-figure::after {
   z-index: 9;
 }
 @media only screen and (min-width: 992px) {
-  section.selskaber-block .isotope-grid .grid-item:nth-of-type(2) {
+  section.nyheder-block .isotope-grid .grid-item:nth-of-type(2) {
     margin-top: calc(var(--bs-gutter-y) * 2);
   }
 }
-section.selskaber-block .isotope-grid .grid-item .image-figure {
+section.nyheder-block .isotope-grid .grid-item .image-figure {
   -webkit-transition: var(--se--transition);
   transition: var(--se--transition);
   background: var(--wp--preset--color--secondary-l-2);
@@ -50,32 +50,32 @@ section.selskaber-block .isotope-grid .grid-item .image-figure {
   position: relative;
 }
 @media only screen and (min-width: 576px) {
-  section.selskaber-block .isotope-grid .grid-item .image-figure {
+  section.nyheder-block .isotope-grid .grid-item .image-figure {
     height: 250px;
     padding: 0 10rem;
   }
 }
 @media only screen and (min-width: 768px) {
-  section.selskaber-block .isotope-grid .grid-item .image-figure {
+  section.nyheder-block .isotope-grid .grid-item .image-figure {
     padding: 0 4rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  section.selskaber-block .isotope-grid .grid-item .image-figure {
+  section.nyheder-block .isotope-grid .grid-item .image-figure {
     padding: 0 6rem;
   }
 }
 @media only screen and (min-width: 1200px) {
-  section.selskaber-block .isotope-grid .grid-item .image-figure {
+  section.nyheder-block .isotope-grid .grid-item .image-figure {
     padding: 0 4rem;
   }
 }
 @media only screen and (min-width: 1400px) {
-  section.selskaber-block .isotope-grid .grid-item .image-figure {
+  section.nyheder-block .isotope-grid .grid-item .image-figure {
     padding: 0 5rem;
   }
 }
-section.selskaber-block .isotope-grid .grid-item .image-figure::after {
+section.nyheder-block .isotope-grid .grid-item .image-figure::after {
   content: "";
   width: 90%;
   height: 8px;
@@ -92,13 +92,22 @@ section.selskaber-block .isotope-grid .grid-item .image-figure::after {
   -webkit-transform-origin: left;
           transform-origin: left;
 }
-section.selskaber-block .isotope-grid .grid-item .isotope-captions .isotope-caption-1 {
+section.nyheder-block .isotope-grid .grid-item .isotope-captions .isotope-caption-1 {
   color: var(--wp--preset--color--dark-2);
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-weight: 400;
 }
-section.selskaber-block .isotope-grid .grid-item .isotope-captions .isotope-caption-2 {
+section.nyheder-block .isotope-grid .grid-item .isotope-captions .isotope-caption-2 {
   color: var(--wp--preset--color--dark-1);
   margin-bottom: 0;
+}
+section.nyheder-block .isotope-grid .grid-item a:hover .image-figure::after {
+  z-index: 9;
+}
+section.nyheder-block .isotope-grid .grid-item .image-figure {
+  padding: 0;
+}
+section.nyheder-block .isotope-grid .grid-item .image-figure::after {
+  z-index: 9;
 }

@@ -38,6 +38,9 @@ Telefon: +45 78 70 29 29 - Email: horsens@superego.nu
 		<link href="<?= get_template_directory_uri(); ?>/assets/images/theme-default/apple-icon-touch.png" rel="apple-touch-icon" />
 	<? endif; ?>
 
+	<!-- Prevent auto phone links on iOS -->
+	<meta name="format-detection" content="telephone=no" />
+
 	<!-- Preconnect Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +61,7 @@ Telefon: +45 78 70 29 29 - Email: horsens@superego.nu
 	<!-- Page loader -->
 	<div id="loadingContainer">
 		<div class="lottie-container">
-			<lottie-player src="/wp-content/themes/superego/assets/json/MM_SPLASH_ANIMATION.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"    autoplay></lottie-player>
+			<lottie-player src="/wp-content/themes/superego/assets/json/MM_SPLASH_ANIMATION.json" background="transparent" speed="1" style="width: 100%; height: 100%;" autoplay></lottie-player>
 		</div>
 	</div>
 

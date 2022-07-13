@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// Nyheder Block styling
+// -----------------------------------------------------------------------------
+
+@use "../../../assets/styles/scss/01_abstracts/mixins" as *;
+
+section.nyheder-block {
+  @include Isotope;
+
+  .isotope-grid {
+    .grid-item {
+      a {
+        &:hover {
+          .image-figure {
+            &::after {
+              z-index: 9;
+            }
+          }
+        }
+      }
+
+      .image-figure {
+        padding: 0;
+
+        &::after {
+          z-index: 9;
+        }
+      }
+    }
+  }
+}

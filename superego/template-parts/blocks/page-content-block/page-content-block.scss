@@ -6,7 +6,9 @@
 
 body section.page-content-block {
   h1 {
-    margin-bottom: 5rem;
+    @include mq(lg) {
+      margin-bottom: 5rem;
+    }
   }
 
   h1,

@@ -37,5 +37,6 @@ function se_enqueue_isotope()
 {
   if (!wp_script_is('isotope')) :
     wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js', ['jquery'], null, true);
+    wp_enqueue_script('isotope-js-call', THEME . '/assets/scripts/isotope.js', array('jquery'), false, false);
   endif;
 }

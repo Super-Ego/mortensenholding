@@ -27,10 +27,8 @@ $allowed_blocks = ['core/heading', 'core/paragraph', 'core/list', 'core/html', '
 // Custom fields
 $ejendom_url = get_post_field('post_name', $ejendom->ID);
 
-// Register Isotope JS (CDN)
-wp_enqueue_script('isotope-js', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', ['jquery'], null, false);
-// Register Isotope
-wp_enqueue_script('isotope-js-call', THEME . '/assets/scripts/isotope.js', array('jquery'), false, false);
+// Enqueue Isotope
+se_enqueue_isotope();
 ?>
 
 <section id="ejendoms-filter" class="section <? echo esc_attr($className); ?>">
@@ -39,7 +37,7 @@ wp_enqueue_script('isotope-js-call', THEME . '/assets/scripts/isotope.js', array
             <div class="col-lg-12">
                 <div id="filter">
 
-                    <div class="filter-tab beliggenhed-tab">
+                    <div class="filter-tab beliggenhed-tab mb-3">
                         <div class="inner">
                             <div class="wrapper">
                                 <span class="title">Beliggenhed</span>
@@ -51,7 +49,6 @@ wp_enqueue_script('isotope-js-call', THEME . '/assets/scripts/isotope.js', array
                                 </svg>
                             </div>
                         </div>
-
                         <div class="options-wrapper">
                             <div class="options" data-filter-group="beliggenhed">
                                 <div class="option" data-filter=""><span>Alle</span></div>
@@ -76,7 +73,7 @@ wp_enqueue_script('isotope-js-call', THEME . '/assets/scripts/isotope.js', array
                         </div>
                     </div>
 
-                    <div class="filter-tab type-tab">
+                    <div class="filter-tab type-tab mb-3">
                         <div class="inner">
                             <div class="wrapper">
                                 <span class="title">Type</span>
@@ -203,9 +200,9 @@ wp_enqueue_script('isotope-js-call', THEME . '/assets/scripts/isotope.js', array
                             <figure class="image-figure">
                                 <?= get_the_post_thumbnail($ejendom->ID, 'medium_large') ?>
                             </figure>
-                            <div class="inner">
-                                <p class="address"><?= get_the_title($ejendom->ID); ?></p>
-                                <p class="city"><?= $beliggenhed ?></p>
+                            <div class="isotope-captions">
+                                <p class="isotope-caption-1 h5"><?= get_the_title($ejendom->ID); ?></p>
+                                <p class="isotope-caption-2 h5"><?= $beliggenhed ?></p>
                             </div>
                         </a>
                     </div>

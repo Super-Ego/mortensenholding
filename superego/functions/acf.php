@@ -220,6 +220,26 @@ if (class_exists('ACF')) :
 			['Selskaber'],
 		),
 		
+		// Nyheder block
+		$nyheder = new ACF_Block(
+			'nyheder-block',
+			'Nyheder block',
+			'Block til visning af nyheder',
+			'superego-blocks',
+			'admin-site-alt',
+			['Nyheder'],
+		),
+		
+		// Nyheder banner block
+		$nyheder = new ACF_Block(
+			'nyheder-banner',
+			'Nyheder banner block',
+			'Block til visning af 3 seneste nyheder',
+			'superego-blocks',
+			'admin-site-alt',
+			['Nyheder'],
+		),
+		
 		// Selskaber block
 		$ejendomme = new ACF_Block(
 			'ejendomme-block',

@@ -1,5 +1,7 @@
-body section.page-content-block h1 {
-  margin-bottom: 5rem;
+@media only screen and (min-width: 992px) {
+  body section.page-content-block h1 {
+    margin-bottom: 5rem;
+  }
 }
 body section.page-content-block h1,
 body section.page-content-block h2,

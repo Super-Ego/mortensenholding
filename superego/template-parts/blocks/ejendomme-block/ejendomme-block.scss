@@ -5,83 +5,31 @@
 @use "../../../assets/styles/scss/01_abstracts/mixins" as *;
 
 // Ejendoms oversigt block
-.home #ejendomme-oversigt {
-  // @include mq-max(lg) {
-  //     padding-top: $section-padding-phone;
-  // }
-}
-#ejendomme-oversigt {
+body #ejendomme-oversigt {
+  @include Isotope;
+
   .isotope-grid {
-    --bs-gutter-y: 3rem;
-
-    @include mq(lg) {
-      --bs-gutter-x: 5rem;
-      --bs-gutter-y: 7rem;
-    }
-
     .grid-item {
       a {
-        transition: var(--se--transition);
-
         &:hover {
           .image-figure {
-            background: var(--wp--preset--color--secondary-d-2);
-
             &::after {
-              transform: scaleX(1);
-              transform-origin: left;
               z-index: 9;
             }
           }
         }
       }
 
-      &:nth-of-type(2) {
-        @include mq(lg) {
-          margin-top: calc(var(--bs-gutter-y) * 2);
-        }
-      }
-
       .image-figure {
-        transition: var(--se--transition);
-        background: var(--wp--preset--color--secondary-l-2);
-        height: 200px;
-        width: auto;
-        display: flex;
-        align-items: center;
-        position: relative;
-
-        @include mq(sm) {
-          height: 250px;
-        }
+        padding: 0;
 
         &::after {
-          content: "";
-          width: 90%;
-          height: 8px;
-          background: var(--wp--preset--color--accent-b);
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          transform: scaleX(0);
-          transition: transform var(--se--transition);
-          transform-origin: left;
           z-index: 9;
         }
-      }
 
-      .inner {
-        .address {
-          color: var(--wp--preset--color--dark-2);
-          margin-top: 1rem;
-          margin-bottom: 0.5rem;
-          font-weight: var(--wp--custom--font-weight--normal);
-        }
-
-        .city {
-          color: var(--wp--preset--color--dark-1);
-          margin-bottom: 0;
-          font-weight: var(--wp--custom--font-weight--extra-bold);
+        img {
+          object-fit: cover;
+          height: 100%;
         }
       }
     }
@@ -91,22 +39,33 @@
 // Ejendoms filter
 #ejendoms-filter {
   padding: 0;
-  position: relative;
-  z-index: 11;
-  overflow: visible;
-  margin-top: calc(0px - var(--se--section-padding));
+
+  @include mq(xxl) {
+    position: relative;
+    z-index: 11;
+    overflow: visible;
+    margin-top: calc(0px - var(--se--section-padding));
+  }
 
   #filter {
-    background: var(--wp--preset--color--accent-b);
     height: var(--se--section-padding);
-    max-height: 5rem;
     display: flex;
     color: var(--wp--preset--color--light-b);
 
-    @include mq-max(lg) {
+    @include mq-max(xxl) {
       display: flex;
       flex-direction: column;
       height: auto;
+    }
+
+    @include mq(xxl) {
+      max-height: 5rem;
+    }
+
+    @include mq(xxl) {
+      .mb-3 {
+        margin-bottom: 0 !important;
+      }
     }
 
     .filter-tab {
@@ -117,9 +76,11 @@
       transition: var(--se--transition);
       cursor: pointer;
       position: relative;
+      background: var(--wp--preset--color--accent-b);
 
-      @include mq-max(lg) {
-        padding: 1.5rem 2rem;
+      @include mq-max(xxl) {
+        padding: 0;
+        flex-direction: column;
         border: 0 !important;
       }
 
@@ -128,7 +89,7 @@
       }
 
       &.active {
-        @include mq-max(lg) {
+        @include mq-max(xxl) {
           z-index: 9;
         }
         .inner {
@@ -151,6 +112,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include mq-max(xxl) {
+          padding: 1.5rem 0;
+          width: calc(100% - 6rem);
+          margin-left: auto;
+          margin-right: auto;
+        }
 
         .wrapper {
           flex: 1;
@@ -176,7 +144,7 @@
       .options-wrapper {
         width: 100%;
         height: auto;
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
         opacity: 0;
@@ -186,6 +154,10 @@
         opacity: 1;
         visibility: visible;
         display: none;
+
+        @include mq(xxl) {
+          position: absolute;
+        }
 
         .options {
           max-height: 235px;
@@ -204,9 +176,6 @@
           }
         }
 
-        &.active {
-        }
-
         .option {
           flex: 1;
           padding: 1rem 3rem;
@@ -214,14 +183,6 @@
           transition: var(--se--transition);
           display: flex;
           justify-content: space-between;
-
-          &:hover {
-            background: var(--wp--preset--color--secondary-d);
-          }
-
-          &.active {
-            background: var(--wp--preset--color--secondary-d);
-          }
 
           &.remove {
             display: none;
@@ -233,6 +194,11 @@
 
           &:nth-of-type(even) {
             background: var(--wp--preset--color--secondary-l-2);
+          }
+
+          &:hover {
+            background: var(--wp--preset--color--accent-b);
+            color: var(--wp--preset--color--light-b);
           }
         }
       }

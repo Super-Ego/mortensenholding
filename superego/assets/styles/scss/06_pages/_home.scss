@@ -6,13 +6,21 @@
 
 body.home {
   #frontpage-banner {
+    height: calc(90vh - var(--se--header-height));
+    padding: 0;
+
+    @include mq-max(lg) {
+      background-color: var(--wp--preset--color--primary-b);
+    }
+
     @include mq(md) {
       padding: 6rem 0;
+      height: 50vh;
     }
 
     @include mq(lg) {
-      padding: var(--se--section-padding) 0;
       height: 70vh;
+      padding: var(--se--section-padding) 0;
       width: calc(100% + 2px);
       left: -1px;
     }
@@ -22,12 +30,21 @@ body.home {
       height: 100%;
 
       .container {
-        height: 100%;
+        height: 55%;
         display: flex;
         align-items: center;
 
         @include mq-max(sm) {
           width: auto;
+        }
+
+        @include mq-max(lg) {
+          position: absolute;
+          bottom: 0;
+        }
+
+        @include mq(lg) {
+          height: 100%;
         }
 
         .banner-content {
@@ -46,6 +63,12 @@ body.home {
       }
 
       .background-image {
+        height: 45%;
+
+        @include mq(lg) {
+          height: 100%;
+        }
+
         .inner {
           width: 100%;
           height: 100%;
@@ -80,8 +103,14 @@ body.home {
             background-color: var(--wp--preset--color--primary-b);
 
             img {
-              width: 80%;
-              margin-left: auto;
+              @include mq(md) {
+                width: 65%;
+                margin-left: auto;
+              }
+
+              @include mq(lg) {
+                width: 80%;
+              }
             }
           }
         }
